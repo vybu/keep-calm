@@ -1,0 +1,18 @@
+@import "~normalize.css";
+@import "variables";
+//@import "../../modules/alphaCalculator/styles";
+
+* {
+  box-sizing: border-box;
+}
+
+#app, .App, body, html {
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+  background-color: $background-color;
+}
+
+

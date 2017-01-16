@@ -1,0 +1,77 @@
+exports[`AlphaCalculator components Form should render 1`] = `
+<Form>
+  <div
+    className="AlphaCalculatorForm">
+    <Input>
+      <input
+        className="AlphaCalculatorInput"
+        onChange={[Function]}
+        placeholder="Enter a number"
+        type="text" />
+    </Input>
+    <Submit>
+      <div
+        className="AlphaCalculatorSubmit is-disabled">
+        <button
+          disabled={true}
+          onClick={[Function]}>
+          Get Calculations
+        </button>
+      </div>
+    </Submit>
+  </div>
+</Form>
+`;
+
+exports[`AlphaCalculator components Input should render 1`] = `
+<input
+  className="AlphaCalculatorInput"
+  onChange={[Function]}
+  placeholder="Enter a number"
+  type="text"
+  value="1" />
+`;
+
+exports[`AlphaCalculator components Overlay should render 1`] = `
+<div
+  className="AlphaCalculatorOverlay">
+  <div
+    className="AlphaCalculatorOverlay-content">
+    <div
+      className="AlphaCalculatorOverlay-text">
+      Result: 
+      1
+    </div>
+    <div
+      className="AlphaCalculatorOverlay-controls">
+      <button
+        className="AlphaCalculatorOverlay-button"
+        onClick={[Function]}>
+        Enter new value
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AlphaCalculator components Submit should render with isEnabled false 1`] = `
+<div
+  className="AlphaCalculatorSubmit is-disabled">
+  <button
+    disabled={true}
+    onClick={[Function]}>
+    Get Calculations
+  </button>
+</div>
+`;
+
+exports[`AlphaCalculator components Submit should render with isEnabled true 1`] = `
+<div
+  className="AlphaCalculatorSubmit ">
+  <button
+    disabled={false}
+    onClick={[Function]}>
+    Get Calculations
+  </button>
+</div>
+`;
