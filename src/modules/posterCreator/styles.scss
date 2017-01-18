@@ -1,0 +1,35 @@
+
+.CreatorContainer {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.CreatorForm {
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+
+  &-stylingControls {
+    display: flex;
+    height: 50px;
+
+    div {
+      flex: 1;
+      margin: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+    }
+  }
+}
+
+.TextInput {
+  margin: 4px;
+  padding: 2px;
+  height: 38px;
+  font-size: 20px;
+}

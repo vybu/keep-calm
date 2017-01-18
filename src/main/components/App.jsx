@@ -1,8 +1,8 @@
 import React from 'react';
-import posterCanvas from '../../modules/posterCanvas';
 import pageStructure from '../../modules/pageStructure';
+import Creator from '../../modules/posterCreator';
 
-const { PosterCanvas } = posterCanvas.components;
+const { CreatorContainer } = Creator.components;
 const { PageNav, PageBody, PageFooter, MainTextSection } = pageStructure.components;
 
 const App = () => (
@@ -13,6 +13,7 @@ const App = () => (
                 <p>Generating a Keep Calm And Carry On poster has never been this easy.</p>
                 <p>Use our creator to create and print, export or share Keep Calm And Carry on posters</p>
             </MainTextSection>
+            <CreatorContainer/>
         </PageBody>
         <PageFooter/>
     </div>
