@@ -10,9 +10,11 @@ const App = () => (
         <PageNav />
         <PageBody>
             <MainTextSection title={"Create Keep Calm Posters With Ease"}>
-                <p>Best in class!</p>
+                <p>Generating a Keep Calm And Carry On poster has never been this easy.</p>
+                <p>Use our creator to create and print, export or share Keep Calm And Carry on posters</p>
             </MainTextSection>
         </PageBody>
+        <PageFooter/>
     </div>
 );
 

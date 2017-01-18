@@ -3,7 +3,7 @@ import React from 'react';
 const PageNav = () => (
     <nav className="PageNav">
         <div className="PageNav-logo">
-            Keepcalm.co
+            <span className="PageNav-logoIcon">&#0167;</span> KeepCalm.top
         </div>
         <div className="PageNav-controls">
             <span className="PageNav-controlsItem">Creator</span>

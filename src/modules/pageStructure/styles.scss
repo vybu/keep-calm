@@ -1,17 +1,29 @@
 
 .PageNav {
   padding: 0 50px;
-  height: 60px;
+  height: 80px;
   display: flex;
-  border-bottom: 1px solid $dark-main-color;
+  background-color: lighten(whitesmoke, 5%);
 
   @include for-phone-only {
     padding: 0 5vw;
   }
 
   &-logo {
+    font-size: 26px;
     display: flex;
     align-items: center;
+  }
+
+  &-logoIcon {
+    font-family: 'Keep Calm'; // TODO What happens when font dont load ? use img?
+    padding-right: 20px;
+    font-size: 40px;
+
+    @include for-phone-only {
+      display: none;
+      font-size: 30px;
+    }
   }
 
   &-controls {
@@ -27,5 +39,75 @@
     @include for-phone-only {
       margin-left: 5vw;
     }
+  }
+}
+
+.PageBody {
+  padding: 0 10vw;
+  min-height: 100%;
+
+  &-topSpace {
+    min-height: 50px;
+    height: 5vh;
+  }
+
+  &-bottomSpace {
+    min-height: 30px;
+    height: 3vh;
+  }
+}
+
+.PageFooter {
+  background-color: lighten(whitesmoke, 5%);
+  padding: 0 10vw 5vh 10vw;
+  display: flex;
+  flex-wrap: wrap;
+
+  &-about {
+    flex: 2;
+    margin-right: 20vw;
+    @include for-phone-only {
+      min-width: 80vW;
+    }
+  }
+
+  &-contact {
+    flex: 1;
+    @include for-phone-only {
+      min-width: 80vW;
+    }
+  }
+
+  &-contactList {
+    @include for-phone-only {
+      min-width: 80vW;
+    }
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+  }
+
+  &-socialMediaList {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.SocialIcon {
+  display: block;
+  height: 26px;
+  width: 26px;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-googlePlus {
+    width: 30px;
+    padding-left: 4px;
   }
 }
