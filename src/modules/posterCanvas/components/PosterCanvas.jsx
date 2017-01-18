@@ -34,6 +34,7 @@ class PosterCanvas extends React.Component {
     }
 
     componentDidMount() {
+        
     }
 
     render() {
@@ -70,7 +71,7 @@ PosterCanvas.propTypes = {
 PosterCanvas.defaultProps = {
     width: 600,
     height: 700,
-    text: ['Keep', 'Calm', 'And', 'Carry this is long sentence hey base how long can you go tell me bro :)', 'On']
+    text: ['Keep', 'Calm', 'And', 'Carry this is long sentence hey base how long can you :)', 'On']
 };
 
 export default PosterCanvas;

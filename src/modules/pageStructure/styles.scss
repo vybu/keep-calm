@@ -1,0 +1,31 @@
+
+.PageNav {
+  padding: 0 50px;
+  height: 60px;
+  display: flex;
+  border-bottom: 1px solid $dark-main-color;
+
+  @include for-phone-only {
+    padding: 0 5vw;
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &-controls {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &-controlsItem {
+    margin-left: 50px;
+
+    @include for-phone-only {
+      margin-left: 5vw;
+    }
+  }
+}
