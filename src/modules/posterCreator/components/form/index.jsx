@@ -3,18 +3,18 @@ import TextInput from './TextInput.jsx';
 import FontSelector from './FontSelector.jsx';
 import TextEffectsSelector from './TextEffectsSelector.jsx';
 
-const Form = () => (
+const Form = (props) => (
     <div className="CreatorForm">
         <div className="CreatorForm-stylingControls">
             <div>ICON</div>
             <div>BG COLOR</div>
             <div>TEXT COLOR</div>
         </div>
-        <TextInput value="KEEP"/>
-        <TextInput value="CALM"/>
-        <TextInput value="AND"/>
-        <TextInput value="CARRY"/>
-        <TextInput value="ON"/>
+        <TextInput value={props.text1} field="text1" setFormValue={props.setFormValue}/>
+        <TextInput value={props.text2} field="text2" setFormValue={props.setFormValue}/>
+        <TextInput value={props.text3} field="text3" setFormValue={props.setFormValue}/>
+        <TextInput value={props.text4} field="text4" setFormValue={props.setFormValue}/>
+        <TextInput value={props.text5} field="text5" setFormValue={props.setFormValue}/>
         <FontSelector/>
         <TextEffectsSelector/>
     </div>

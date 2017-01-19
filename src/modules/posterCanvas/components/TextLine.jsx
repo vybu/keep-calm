@@ -19,21 +19,33 @@ class TextLine extends React.Component {
         return this.refs.txt.getWidth();
     }
 
-    ensureFitInWidth() {
-        const width = this.width;
-        const widthLimit = this.widthLimit;
+    ensureFitInWidth(isTooWide = true) {
+        const MIN_FONT_SIZE = 8; // current solution to situation where it gets stuck in loop between increasing: decreasing
 
-        if (width > widthLimit) {
-            const val = this.state.forcedFontSize !== null ? this.state.forcedFontSize - 2 : this.props.fontSize -2;
+        if (isTooWide) {
+            if (this.state.forcedFontSize !== null && this.state.forcedFontSize <= MIN_FONT_SIZE) return;
+
+            const val = this.state.forcedFontSize !== null ? Math.max(MIN_FONT_SIZE, this.state.forcedFontSize - 2) : this.props.fontSize -2;
             this.setState({ forcedFontSize: val, offsetY: -((this.props.fontSize - val) / 2)});
+        } else {
+            if (this.state.forcedFontSize + 2 > this.props.fontSize) {
+                this.setState({ forcedFontSize: null, offsetY: 0});
+            } else {
+                const v = this.state.forcedFontSize + 2;
+                this.setState({ forcedFontSize: v, offsetY: -((this.props.fontSize - v) / 2)});
+            }
         }
     }
 
-    componentDidUpdate() {
-        if (this.width > this.widthLimit) {
-            this.ensureFitInWidth();
+    componentDidUpdate() { // FIXME this doesn't really ensure that it won't go into infinite loop
+        const w = this.width;
+        const wLimit = this.widthLimit;
+        if (w > wLimit) {
+            this.ensureFitInWidth(true);
         } else if (this.state.offsetX !== this.width / 2) {
             this.setState({ offsetX: this.width / 2 });
+        } else if (this.state.forcedFontSize !== null && wLimit - w > (wLimit / 5)) {
+            this.ensureFitInWidth(false);
         }
     }
 
@@ -44,7 +56,6 @@ class TextLine extends React.Component {
     render() {
 
         const { x, y, text, color, fontFamily, fontSize } = this.props;
-
         return (
             <Text ref="txt"
                   align={'center'}

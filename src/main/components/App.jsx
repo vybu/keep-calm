@@ -2,7 +2,7 @@ import React from 'react';
 import pageStructure from '../../modules/pageStructure';
 import Creator from '../../modules/posterCreator';
 
-const { CreatorContainer } = Creator.components;
+const { CreatorContainer } = Creator.containers;
 const { PageNav, PageBody, PageFooter, MainTextSection } = pageStructure.components;
 
 const App = () => (

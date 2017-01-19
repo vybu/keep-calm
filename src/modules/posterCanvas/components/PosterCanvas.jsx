@@ -39,7 +39,7 @@ class PosterCanvas extends React.Component {
 
     render() {
 
-        const { text, width, height } = this.props;
+        const { backgroundColor, text, width, height } = this.props;
         const [t1, t2, t3, t4, t5, t6] = getSizesAndCoordinates(height);
 
         return (
@@ -48,7 +48,7 @@ class PosterCanvas extends React.Component {
                     <Rect
                         width={width}
                         height={height}
-                        fill={'#c10c06'}
+                        fill={backgroundColor}
                     />
                     <TextLine maxWidth={width} text="&#0167;" x={width / 2} y={t1.y} fontSize={t1.fontSize}/>
                     <TextLine maxWidth={width} text={text[0]} x={width / 2} y={t2.y} fontSize={t2.fontSize}/>
@@ -63,15 +63,23 @@ class PosterCanvas extends React.Component {
 }
 
 PosterCanvas.propTypes = {
+    icon: React.PropTypes.string,
+    backgroundColor: React.PropTypes.string,
+    textColor: React.PropTypes.string,
     width: React.PropTypes.number,
     height: React.PropTypes.number,
-    text: React.PropTypes.arrayOf(React.PropTypes.string)
+    text: React.PropTypes.arrayOf(React.PropTypes.string),
+    textEffects: React.PropTypes.arrayOf(React.PropTypes.string),
 };
 
 PosterCanvas.defaultProps = {
+    icon: 'default',
+    backgroundColor: '#c10c06',
+    textColor: '#ffffff',
     width: 600,
     height: 700,
-    text: ['Keep', 'Calm', 'And', 'Carry this is long sentence hey base how long can you :)', 'On']
+    text: ['Keep', 'Calm', 'And', 'Carry', 'On'],
+    textEffects: []
 };
 
 export default PosterCanvas;

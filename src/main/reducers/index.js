@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
-// import alphaCalculator from '../../modules/alphaCalculator';
+import posterCreator from '../../modules/posterCreator';
 
 export default combineReducers({
-    // [alphaCalculator.constants.NAME]: alphaCalculator.reducer
-    placeholder: (state = {}) => ({})
+    [posterCreator.constants.NAME]: posterCreator.reducer,
 });

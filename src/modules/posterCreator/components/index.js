@@ -1,3 +1,3 @@
-import CreatorContainer from './CreatorContainer.jsx';
+import Form from './form/index.jsx';
 
-export default { CreatorContainer };
+export default { Form };
