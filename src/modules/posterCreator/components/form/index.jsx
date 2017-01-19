@@ -1,14 +1,15 @@
 import React from 'react';
 import TextInput from './TextInput.jsx';
 import FontSelector from './FontSelector.jsx';
+import ColorSelector from './ColorSelector.jsx';
 import TextEffectsSelector from './TextEffectsSelector.jsx';
 
 const Form = (props) => (
     <div className="CreatorForm">
         <div className="CreatorForm-stylingControls">
-            <div>ICON</div>
-            <div>BG COLOR</div>
-            <div>TEXT COLOR</div>
+            <div className="Temporary">ICON</div>
+            <div className="Temporary">BG COLOR</div>
+            <div className="Temporary">TEXT COLOR</div>
         </div>
         <TextInput value={props.text1} field="text1" setFormValue={props.setFormValue}/>
         <TextInput value={props.text2} field="text2" setFormValue={props.setFormValue}/>

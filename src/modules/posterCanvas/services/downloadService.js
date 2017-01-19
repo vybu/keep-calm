@@ -1,12 +1,20 @@
+import getImgUrl from './lib/getImgUrl';
 
-export default function(imageSrc, name = 'KeepCalm.jpg') {
-    const aTag = document.createElement('a');
+const defaultOptions = {
+    width: 600,
+    height: 700
+};
 
-    aTag.setAttribute('href', imageSrc);
-    aTag.setAttribute('download', name);
-    aTag.style.display = 'none';
+export default function(options = defaultOptions, state) {
+    getImgUrl({...state, ...options}, (imageSrc) => {
+        const aTag = document.createElement('a');
 
-    document.body.appendChild(aTag);
-    aTag.click();
-    document.body.removeChild(aTag);
+        aTag.setAttribute('href', imageSrc);
+        aTag.setAttribute('download', 'Poster-KeepCalm.top');
+        aTag.style.display = 'none';
+
+        document.body.appendChild(aTag);
+        aTag.click();
+        document.body.removeChild(aTag);
+    });
 }

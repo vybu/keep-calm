@@ -34,7 +34,11 @@ class PosterCanvas extends React.Component {
     }
 
     componentDidMount() {
-        
+        this.props.getImgUrl(this.getImgUrl.bind(this));
+    }
+
+    getImgUrl() {
+        return this.refs.PosterCanvas.toDataURL();
     }
 
     render() {
@@ -44,7 +48,7 @@ class PosterCanvas extends React.Component {
 
         return (
             <Stage width={width} height={height}>
-                <Layer ref="toImg">
+                <Layer ref="PosterCanvas">
                     <Rect
                         width={width}
                         height={height}
@@ -70,6 +74,7 @@ PosterCanvas.propTypes = {
     height: React.PropTypes.number,
     text: React.PropTypes.arrayOf(React.PropTypes.string),
     textEffects: React.PropTypes.arrayOf(React.PropTypes.string),
+    getImgUrl: React.PropTypes.func
 };
 
 PosterCanvas.defaultProps = {
@@ -79,7 +84,8 @@ PosterCanvas.defaultProps = {
     width: 600,
     height: 700,
     text: ['Keep', 'Calm', 'And', 'Carry', 'On'],
-    textEffects: []
+    textEffects: [],
+    getImgUrl: () => {}
 };
 
 export default PosterCanvas;

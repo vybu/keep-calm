@@ -1,11 +1,13 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import rootReducer from '../reducers';
+import posterCanvas from '../../modules/posterCanvas';
 
 function configureStoreProd(initialState) {
 
 
     const middlewares = [
+        posterCanvas.middleware
     ];
 
     const store = createStore(rootReducer, initialState, compose(
@@ -22,6 +24,7 @@ function configureStoreDev(initialState) {
     const middlewares = [
         // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch or between dispatches.
         reduxImmutableStateInvariant(),
+        posterCanvas.middleware
     ];
 
     const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // add support for Redux dev tools

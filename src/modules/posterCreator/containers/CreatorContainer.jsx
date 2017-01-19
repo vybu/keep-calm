@@ -5,12 +5,12 @@ import { getAll } from '../selectors';
 import Form from '../components/form/index.jsx';
 import posterCanvas from '../../posterCanvas';
 
-const { PosterCanvas } = posterCanvas.components;
+const { PosterCanvasContainer } = posterCanvas.components;
 
 const CreatorContainer = (props) => (
     <div className="CreatorContainer">
         <Form {...props}/>
-        <PosterCanvas {...props}
+        <PosterCanvasContainer {...props}
                       text={[
                           props.text1,
                           props.text2,

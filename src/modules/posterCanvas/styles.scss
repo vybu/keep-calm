@@ -1,0 +1,27 @@
+
+.PosterCanvasContainer {
+  position: relative;
+}
+
+.ContentRetrieveOverlay, .ContentRetrieveOverlay-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.ContentRetrieveOverlay {
+  &-main {
+    background-color: rgba(1, 1, 1, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10%;
+  }
+
+  &-optionButton {
+
+  }
+}

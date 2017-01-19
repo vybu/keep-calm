@@ -1,3 +1,6 @@
-import components from './components/index.js';
+import * as actions from './actions';
+import * as constants from './constants';
+import middleware from './middleware';
+import components from './components';
 
-export default { components };
+export default { actions, constants, middleware, components };
