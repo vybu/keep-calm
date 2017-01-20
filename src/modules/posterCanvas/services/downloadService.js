@@ -1,4 +1,5 @@
 import getImgUrl from './lib/getImgUrl';
+import posterCreator from '../../posterCreator';
 
 const defaultOptions = {
     width: 600,
@@ -6,7 +7,8 @@ const defaultOptions = {
 };
 
 export default function(options = defaultOptions, state) {
-    getImgUrl({...state, ...options}, (imageSrc) => {
+
+    getImgUrl({...posterCreator.selectors.getAll(state), ...options}, (imageSrc) => {
         const aTag = document.createElement('a');
 
         aTag.setAttribute('href', imageSrc);

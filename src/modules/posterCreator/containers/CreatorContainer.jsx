@@ -11,13 +11,7 @@ const CreatorContainer = (props) => (
     <div className="CreatorContainer">
         <Form {...props}/>
         <PosterCanvasContainer {...props}
-                      text={[
-                          props.text1,
-                          props.text2,
-                          props.text3,
-                          props.text4,
-                          props.text5,
-                      ]}
+                      text={props.text}
                       width={400} height={500}/>
     </div>
 );

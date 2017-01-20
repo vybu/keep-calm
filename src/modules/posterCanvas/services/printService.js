@@ -1,4 +1,5 @@
 import getImgUrl from './lib/getImgUrl';
+import posterCreator from '../../posterCreator';
 
 const defaultOptions = {
     width: 600,
@@ -12,7 +13,7 @@ function createImg(src) {
 }
 
 export default function(options = defaultOptions, state) {
-    getImgUrl({...state, ...options}, (imageSrc) => {
+    getImgUrl({...posterCreator.selectors.getAll(state), ...options}, (imageSrc) => {
         const win = window.open();
         win.document.body.appendChild(createImg(imageSrc));
         win.focus();
