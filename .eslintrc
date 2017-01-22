@@ -6,8 +6,7 @@
     "plugin:import/warnings"
   ],
   "plugins": [
-    "react",
-    "redux-saga"
+    "react"
   ],
   "parser": "babel-eslint",
   "parserOptions": {

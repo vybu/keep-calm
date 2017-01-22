@@ -17,6 +17,7 @@
     "remove-dist": "rimraf ./dist",
     "prebuild": "npm run clean-dist && npm run lint && npm run test",
     "build": "babel-node tools/build.js && npm run open:dist",
+    "upload": "scp ./dist/* root@213.32.70.241:/data/keepcalm",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "jest --coverage",
@@ -36,7 +37,6 @@
     "react-router": "^3.0.2",
     "redux": "3.6.0",
     "redux-logger": "^2.7.4",
-    "redux-saga": "^0.14.0",
     "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {

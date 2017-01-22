@@ -1,5 +1,4 @@
 import 'whatwg-fetch';
-import 'babel-polyfill';
 import './main/styles/main.scss';
 import './vendor/KeepCalm-Medium.ttf';
 import React from 'react';
