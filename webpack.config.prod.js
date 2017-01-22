@@ -6,6 +6,33 @@ import WebpackMd5Hash from 'webpack-md5-hash';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
+import HtmlPluginServerSideRenderExtensions from './tools/htmlPluginServerSideRenderExtensions';
+
+function ConfigedHtmlWebpackPlugin(filename = 'index.html', prerenderPath = null) {
+    const settings = {
+        filename,
+        template: 'src/index.ejs',
+        minify: {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeRedundantAttributes: true,
+            useShortDoctype: true,
+            removeEmptyAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            keepClosingSlash: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true
+        },
+        inject: true,
+    };
+
+    if (prerenderPath) {
+        settings.prerenderPath = prerenderPath;
+    }
+
+    return new HtmlWebpackPlugin(settings);
+}
 
 const GLOBALS = {
     'process.env.NODE_ENV': JSON.stringify('production'),
@@ -27,6 +54,7 @@ export default {
         filename: '[name].[chunkhash].js'
     },
     plugins: [
+        new HtmlPluginServerSideRenderExtensions(),
         // Hash the files using MD5 so that their names change when the content changes.
         new WebpackMd5Hash(),
 
@@ -40,23 +68,9 @@ export default {
         new ExtractTextPlugin('[name].[contenthash].css'),
 
         // Generate HTML file that contains references to generated bundles. See here for how this works: https://github.com/ampedandwired/html-webpack-plugin#basic-usage
-        new HtmlWebpackPlugin({
-            template: 'src/index.ejs',
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeRedundantAttributes: true,
-                useShortDoctype: true,
-                removeEmptyAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                keepClosingSlash: true,
-                minifyJS: true,
-                minifyCSS: true,
-                minifyURLs: true
-            },
-            inject: true,
-            // Note that you can add custom options here if you need to handle other custom logic in index.html
-        }),
+        ConfigedHtmlWebpackPlugin(),
+        ConfigedHtmlWebpackPlugin('history.html', '/history'),
+        ConfigedHtmlWebpackPlugin('generator.html', '/generator'),
 
         // Eliminate duplicate packages when generating bundle
         new webpack.optimize.DedupePlugin(),

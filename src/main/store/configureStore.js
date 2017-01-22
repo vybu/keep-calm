@@ -4,7 +4,7 @@ import reduxLogger from 'redux-logger';
 import rootReducer from '../reducers';
 import posterCanvas from '../../modules/posterCanvas';
 
-function configureStoreProd(initialState) {
+export function configureStoreProd(initialState) {
 
 
     const middlewares = [
@@ -20,7 +20,7 @@ function configureStoreProd(initialState) {
     return store;
 }
 
-function configureStoreDev(initialState) {
+export function configureStoreDev(initialState) {
 
     const middlewares = [
         // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch or between dispatches.
