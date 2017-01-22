@@ -21,10 +21,10 @@ const PageFooter = () => (
         <div className="PageFooter-socialMedia">
             <h4>Share</h4>
             <div className="PageFooter-socialMediaList">
-                <FacebookIcon/>
-                <TwitterIcon/>
-                <GoogleplusIcon/>
-                <PinterestIcon/>
+                <FacebookIcon href={'https://www.facebook.com/sharer/sharer.php?u=https%3A//keepcalm.top/'}/>
+                <TwitterIcon href={'https://twitter.com/home?status=https%3A//keepcalm.top/'}/>
+                <GoogleplusIcon href={'https://plus.google.com/share?url=https%3A//keepcalm.top/'}/>
+                <PinterestIcon href={'https://pinterest.com/pin/create/button/?url=&media=https%3A//keepcalm.top/&description=Create%20awesome%20keep%20calm%20posters!'}/>
             </div>
         </div>
     </footer>
