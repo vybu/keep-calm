@@ -1,7 +1,7 @@
 {
-  "name": "task-implementation",
+  "name": "keep-calm",
   "version": "0.0.1",
-  "description": "React Developer position task implementation",
+  "description": "keepcalm.top source code",
   "engines": {
     "npm": ">=3"
   },
@@ -100,9 +100,6 @@
     ],
     "snapshotSerializers": [
       "<rootDir>/node_modules/enzyme-to-json/serializer"
-    ],
-    "testPathIgnorePatterns": [
-      "alphaCalculator"
     ]
   }
 }

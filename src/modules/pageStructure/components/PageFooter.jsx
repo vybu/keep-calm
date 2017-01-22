@@ -5,7 +5,10 @@ const PageFooter = () => (
     <footer className="PageFooter">
         <div className="PageFooter-about">
             <h4>About</h4>
-            <p>Lorem ipsum dolor sit amet, eam ad wisi laudem, at quo agam utroque periculis, per esse dicam at. Fuisset dissentias vis an. Dicam urbanitas eu usu. No ius nemore propriae. Quo diceret vivendum accusamus ex, ex quo justo admodum patrioque.</p>
+            <p>We created this "Keep Calm And Carry On" poster generator, because existing solutions
+            are either not working, too complicated or have no easy way to export / print / share created poster.
+            Keepcalm.top aims to make fast and fun experience. If you have suggestion how to improve this site
+            feel free to reach out by email or twitter.</p>
         </div>
         <div className="PageFooter-contact">
             <h4>Contact</h4>
