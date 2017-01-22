@@ -22,6 +22,7 @@
   }
 
   &-optionButton {
+    @include button();
 
   }
 }

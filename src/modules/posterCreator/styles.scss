@@ -2,8 +2,10 @@
 .CreatorContainer {
   background-color: white;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 25px;
+  //max-width: 1000px;
 }
 
 .CreatorForm {
@@ -11,6 +13,7 @@
   max-width: 400px;
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   &-stylingControls {
     display: flex;

@@ -1,9 +1,11 @@
 
+
+
 .PageNav {
   padding: 0 50px;
   height: 80px;
   display: flex;
-  background-color: lighten(whitesmoke, 5%);
+  background-color: $nav-footer-bg;
 
   @include for-phone-only {
     padding: 0 5vw;
@@ -19,12 +21,15 @@
     font-family: 'Keep Calm'; // TODO What happens when font dont load ? use img?
     padding-right: 20px;
     font-size: 40px;
+  }
 
+  &-logoText {
     @include for-phone-only {
       display: none;
       font-size: 30px;
     }
   }
+
 
   &-controls {
     flex: 1;
@@ -35,6 +40,10 @@
 
   &-controlsItem {
     margin-left: 50px;
+    color: rgb(63, 56, 68);
+    font-weight: 600;
+    @include link();
+
 
     @include for-phone-only {
       margin-left: 5vw;
@@ -45,6 +54,10 @@
 .PageBody {
   padding: 0 10vw;
   min-height: 100%;
+
+  @include for-desktop-up {
+    padding: 0 calc((100vw - 1200px) / 2);
+  }
 
   &-topSpace {
     min-height: 50px;
@@ -58,7 +71,7 @@
 }
 
 .PageFooter {
-  background-color: lighten(whitesmoke, 5%);
+  background-color: $nav-footer-bg;
   padding: 0 10vw 5vh 10vw;
   display: flex;
   flex-wrap: wrap;
@@ -87,7 +100,7 @@
 
     a {
       margin-bottom: 10px;
-      text-decoration: none;
+      @include link();
     }
   }
 

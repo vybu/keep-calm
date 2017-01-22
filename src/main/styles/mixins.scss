@@ -14,3 +14,26 @@
 @mixin for-big-desktop-up {
   @media (min-width: 1800px) { @content; }
 }
+
+@mixin link {
+  text-decoration: none;
+  color: rgb(63, 56, 68);
+  &:hover {
+    color: rgba(63, 56, 68, 0.3);
+  }
+}
+
+@mixin button {
+  font-family: 'Muli', sans-serif;
+  font-size: 1.5rem;
+  color: lighten(black, 5%);
+  border: none;
+
+  //border-radius: 0.28rem;
+  padding: 0.7rem;
+  background-color: white;
+
+  &:hover {
+    box-shadow: $bs-medium;
+  }
+}
