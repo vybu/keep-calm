@@ -6,6 +6,14 @@
 }
 
 .History {
+  color: rgba(0,0,0,.8);
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+
+  } // TODO move to snippet
+
   &-imageWrap {
     margin-top: 2rem;
     width: 100%;
