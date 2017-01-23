@@ -1,6 +1,4 @@
 
-
-
 .PageNav {
   padding: 0 50px;
   height: 80px;
@@ -24,8 +22,9 @@
   }
 
   &-logoText {
-    @include for-phone-only {
-      display: none;
+    display: none;
+    @include for-tablet-portrait-up {
+      display: block;
       font-size: 30px;
     }
   }
@@ -65,8 +64,8 @@
   }
 
   &-bottomSpace {
-    min-height: 30px;
-    height: 3vh;
+    min-height: 40px;
+    height: 4vh;
   }
 }
 

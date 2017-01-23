@@ -1,0 +1,33 @@
+
+.PageBody.History {
+  @include for-desktop-up {
+    padding: 0 calc((100vw - 1000px) / 2);
+  }
+}
+
+.History {
+  &-imageWrap {
+    margin-top: 4rem;
+    width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 360px;
+    margin-bottom: 2rem;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &-imageTitle {
+    fonts-syle: italic;
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    color: lighten(black, 25%)
+  }
+
+  &-imageTitleSymbol {
+    padding: 0 5px;
+  }
+}

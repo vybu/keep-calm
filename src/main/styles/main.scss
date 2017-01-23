@@ -1,7 +1,7 @@
 @import "~normalize.css";
 @import "variables";
 @import "mixins";
-//@import "../../modules/alphaCalculator/styles";
+@import "../components/styles";
 @import "../../modules/posterCanvas/styles";
 @import "../../modules/pageStructure/styles";
 @import "../../modules/posterCreator/styles";
@@ -21,4 +21,8 @@
   background-color: $background-color;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
