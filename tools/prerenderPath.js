@@ -8,6 +8,10 @@ const { configureStoreProd } = require('../src/main/store/configureStore');
 
 const store = configureStoreProd();
 
+if (typeof window === 'undefined') {
+    global.window = {};
+}
+
 function generateHtmlAtPath(location, doneCallback) {
     match({ routes, location }, (error, redirectLocation, renderProps) => {
         if (error) {
