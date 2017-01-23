@@ -49,6 +49,7 @@ function ConfigedHtmlWebpackPlugin(filename = 'index.html', prerenderPath = null
 
 const GLOBALS = {
     'process.env.NODE_ENV': JSON.stringify('production'),
+    'process.env.SERVER_RENDER': false,
     __DEV__: false
 };
 

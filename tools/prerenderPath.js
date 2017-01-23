@@ -1,4 +1,6 @@
 process.env.NODE_ENV = 'production';
+process.env.SERVER_RENDER = true;
+
 const React = require('react');
 const { renderToString } = require('react-dom/server');
 const { match, RouterContext } = require('react-router');
@@ -11,6 +13,7 @@ const store = configureStoreProd();
 if (typeof window === 'undefined') {
     global.window = {};
 }
+
 
 function generateHtmlAtPath(location, doneCallback) {
     match({ routes, location }, (error, redirectLocation, renderProps) => {
