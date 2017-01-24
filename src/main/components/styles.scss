@@ -1,9 +1,5 @@
 
-.PageBody.History {
-  @include for-desktop-up {
-    padding: 0 calc((100vw - 1000px) / 2);
-  }
-}
+
 
 .History {
   color: rgba(0,0,0,.8);
@@ -13,6 +9,13 @@
     line-height: 1.5rem;
 
   } // TODO move to snippet
+
+  &-wrap {
+    background-color: $nav-footer-bg;
+    padding: 3vh 5vw;
+    border-radius: $br-medium;
+    margin: 0 -20px;
+  }
 
   &-imageWrap {
     margin-top: 2rem;
