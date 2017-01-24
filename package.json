@@ -17,7 +17,7 @@
     "remove-dist": "rimraf ./dist",
     "prebuild": "npm run clean-dist && npm run lint && npm run test",
     "build": "babel-node tools/build.js && node tools/copyFiles.js && npm run server",
-    "upload": "scp ./dist/* root@213.32.70.241:/data/keepcalm",
+    "upload": "ssh root@213.32.70.241 < ./tools/cleanRemote.sh && scp ./dist/* root@213.32.70.241:/data/keepcalm",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "jest --coverage",
