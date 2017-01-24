@@ -12,19 +12,10 @@ class PosterCanvasContainer extends React.Component {
         return (
             <div className="PosterCanvasContainer">
                 <PosterCanvas {...this.props} />
-                {this.props.showButtons ? <ContentRetrieveOverlay /> : null}
+                <ContentRetrieveOverlay />
             </div>
         );
     }
 }
-
-PosterCanvasContainer.propTypes = {
-    showButtons: React.PropTypes.bool
-};
-
-PosterCanvasContainer.defaultProps = {
-    showButtons: true
-};
-
 
 export default PosterCanvasContainer;
