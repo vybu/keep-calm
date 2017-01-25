@@ -4,8 +4,10 @@ import * as actions from '../actions';
 import { getAll } from '../selectors';
 import Form from '../components/form/index.jsx';
 import posterCanvas from '../../posterCanvas';
+import Noop from '../../../common/components/Noop.jsx';
 
 const { PosterCanvasContainer } = posterCanvas.components;
+
 
 function getMainPosterSizeParams() {
     const [DEFAULT_WIDTH, DEFAULT_HEIGHT] = [400, 500];
@@ -20,6 +22,11 @@ function getMainPosterSizeParams() {
 }
 
 const CreatorContainer = (props) => {
+
+    if (process.env.SERVER_RENDER) {
+        return <Noop/>;
+    }
+
     const [w, h] = getMainPosterSizeParams();
     return (
         <div className="CreatorContainer">

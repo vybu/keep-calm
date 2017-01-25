@@ -2,12 +2,12 @@ import React from 'react';
 
 const PageBody = props => (
     <main className={`PageBody ${props.cls}`}>
-        <div className="PageBody-topSpace"></div>
+        <div className="PageBody-topSpace"/>
         <div className="PageBody-content">
             {props.children}
         </div>
-        <div className="PageBody-bottomSpace"></div>
-        <div className="PageBody-bgContrast"></div>
+        <div className="PageBody-bottomSpace"/>
+        <div className="PageBody-bgContrast"/>
     </main>
 );
 
