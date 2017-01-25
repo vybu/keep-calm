@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+.GalleryPicker {
+  border: 1px solid black;
+  display: flex;
+  height: 300px;
+
+  &-sectionsNavigation {
+    padding: 0.5rem;
+    border-right: 1px solid black;
+  }
+
+  &-navigationItem {
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-top: 0.7rem;
+      display: flex;
+      align-items: center;
+    }
+
+    &.is-active {
+      font-weight: bold;
+    }
+  }
+
+  &-sections {
+    flex: 1;
+  }
+}
+
+.GalleryPickerSection {
+  padding: 0.5rem;
+
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &-item {
+    flex: 1;
+    min-width: 60px;
+    max-width: 60px;
+    height: 60px;
+    margin: 0.45rem;
+  }
+}

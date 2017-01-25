@@ -1,7 +1,7 @@
 import React from 'react';
-import { SwatchesPicker } from 'react-color';
+import { CompactPicker } from 'react-color';
 
 
-const ColorSelector = () => (<SwatchesPicker/>);
+const ColorSelector = () => (<CompactPicker/>);
 
 export default ColorSelector;
