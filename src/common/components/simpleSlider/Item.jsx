@@ -2,12 +2,13 @@ import React from 'react';
 
 
 class Item extends React.Component {
-    constructor(){
+    constructor() {
         super();
     }
 
     render() {
-        const style = {...this.props.style, ...{minHeight: `${this.props.size}px`, minWidth: `${this.props.size}px`}};
+        const size = `${this.props.size}px`;
+        const style = { ...this.props.style, ...{ minHeight: size, maxHeight: size, minWidth: size, maxWidth: size } };
         return (
             <div onClick={this.props.onClick} style={style} className="SimpleSlider-item">
                 {this.props.children}

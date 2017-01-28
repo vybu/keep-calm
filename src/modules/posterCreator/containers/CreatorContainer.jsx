@@ -10,7 +10,7 @@ const { PosterCanvasContainer } = posterCanvas.components;
 
 
 function getMainPosterSizeParams() {
-    const [DEFAULT_WIDTH, DEFAULT_HEIGHT] = [400, 500];
+    const [DEFAULT_WIDTH, DEFAULT_HEIGHT] = [418, 524];
     const w = window.innerWidth;
 
     if (w - w * 0.2 < DEFAULT_HEIGHT) {

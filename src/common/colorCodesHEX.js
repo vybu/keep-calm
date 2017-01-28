@@ -1,3 +1,6 @@
+
+export const defaultColor = ['#c10c06', '#ffffff', '#000000', '#795548', '#2196f3', '#ffeb3b', '#00d084', '#ff6f00', '#fa28ff'];
+
 function getArrayOfLength(l = 100) {
     const a = [];
     while (l--) {
