@@ -5,7 +5,7 @@ import { defaultColor} from '../../../../common/colorCodesHEX';
 const StyleSliderPicker = ({onSelect}) => (
     <div className="CreatorForm-stylingSlidingSelector">
         <Container>
-            {defaultColor.map((c, i) => (<Item onClick={() => onSelect(c)} key={i} style={{ backgroundColor: c, cursor: 'pointer', border: '1px solid #969696' }}/>))}
+            {defaultColor.map((c, i) => (<Item onClick={() => onSelect(c)} key={i} style={{ backgroundColor: c, cursor: 'pointer' }}/>))}
         </Container>
     </div>
 );

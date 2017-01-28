@@ -15,6 +15,6 @@ function createLoadingScript(src) {
 export default function(fontName, callback) {
     const head = document.getElementsByTagName('head')[0];
     const linkTag = createLoadingScript(`${fontName}.css`);
-    linkTag.onload = setTimeout(callback, 500);
+    linkTag.onload = setTimeout(callback, 800);
     head.appendChild(linkTag);
 }

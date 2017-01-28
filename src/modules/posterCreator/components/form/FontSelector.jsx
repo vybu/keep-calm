@@ -1,8 +1,8 @@
 import React from 'react';
 
 const FontSelector = ({ value }) => (
-    <select className="FontSelector" value={value}>
-        <option value="Keep Calm">Keep Calm</option>
+    <select style={{fontFamily: 'Keep Calm'}} className="FontSelector" value={value}>
+        <option style={{fontFamily: 'Keep Calm'}} value="Keep Calm">Keep Calm</option>
     </select>
 );
 

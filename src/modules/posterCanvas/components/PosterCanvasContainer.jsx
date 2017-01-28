@@ -1,6 +1,7 @@
 import React from 'react';
 import PosterCanvas from './PosterCanvas.jsx';
 import ContentRetrieveOverlay from './contentRetrieveOverlay/index.jsx';
+import ContentRetrieveExternal from './contentRetrieveExternal/index.jsx';
 
 
 class PosterCanvasContainer extends React.Component {
@@ -10,9 +11,10 @@ class PosterCanvasContainer extends React.Component {
 
     render() {
         return (
-            <div className="PosterCanvasContainer">
-                <PosterCanvas {...this.props} />
+            <div style={{maxHeight: `${this.props.height}px`}} className="PosterCanvasContainer">
+                <PosterCanvas {...this.props} height={this.props.height -20} width={this.props.width - 16} />
                 <ContentRetrieveOverlay />
+                <ContentRetrieveExternal />
             </div>
         );
     }

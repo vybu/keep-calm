@@ -1,6 +1,11 @@
 
 .PosterCanvasContainer {
+  display: flex;
   position: relative;
+  //border: 1px solid $light-border-color;
+  box-shadow: $bs-medium;
+  padding: 10px;
+  border-radius: $br-medium;
 }
 
 .ContentRetrieveOverlay, .ContentRetrieveOverlay-main {
@@ -13,6 +18,11 @@
 
 
 .ContentRetrieveOverlay {
+
+  @include for-desktop-up {
+    display: none;
+  }
+
   &-main {
     background-color: rgba(1, 1, 1, 0.2);
     display: flex;
@@ -23,6 +33,34 @@
 
   &-optionButton {
     @include button();
+  }
+}
 
+.ContentRetrieveExternal {
+  display: none;
+  @include for-desktop-up {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+
+  }
+
+  &-optionButton {
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: 1px solid darken(#eaeaea, 10%);
+    color: darken(#eaeaea, 35%);
+    font-weight: 700;
+    border-radius: $br-medium;
+
+    &:hover {
+      border: 1px solid darken(#eaeaea, 40%);
+      color: darken(#eaeaea, 75%);
+    }
   }
 }

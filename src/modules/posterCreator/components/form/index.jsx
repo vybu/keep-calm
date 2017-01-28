@@ -11,7 +11,8 @@ const Form = (props) => {
     return (
         <div className="CreatorForm">
             <FormSection title={'Icon'}>
-                <StyleSliderPicker/>
+                {/*<StyleSliderPicker/>*/}
+                <div>Coming Soon!</div>
             </FormSection>
             <FormSection title={'Text'}>
                 <ContentInput {...props} />

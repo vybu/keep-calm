@@ -1,22 +1,43 @@
 
 .CreatorContainer {
+  //border: 1px solid $light-border-color;
   background-color: white;
   border-radius: $br-medium;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 0 -20px;
   padding: 5vw;
   @include for-tablet-landscape-up {
     padding: 35px;
   }
 
+  justify-content: center;
+  @include for-desktop-up {
+    justify-content: space-between;
+  }
+
+  .PosterCanvasContainer {
+    order: -1;
+    margin-bottom: 25px;
+
+    @include  for-desktop-up {
+      order: 1;
+      margin-bottom: 0px;
+    }
+  }
+
 }
 
 .CreatorForm {
+  box-shadow: $bs-small;
+  //border: 1px solid $light-border-color;
+  border-radius: $br-medium;
+  padding: 15px;
+
   flex: 1;
-  max-width: 400px;
-  min-height: 600px;
+  max-width: 460px;
+  height: 570px;
+
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -69,3 +90,4 @@
   height: 34px;
   font-size: 20px;
 }
+

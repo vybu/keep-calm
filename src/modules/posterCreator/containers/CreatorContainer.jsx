@@ -10,7 +10,8 @@ const { PosterCanvasContainer } = posterCanvas.components;
 
 
 function getMainPosterSizeParams() {
-    const [DEFAULT_WIDTH, DEFAULT_HEIGHT] = [418, 524];
+    const DEFAULT_HEIGHT = 570;
+    const DEFAULT_WIDTH = DEFAULT_HEIGHT / 5 * 4;
     const w = window.innerWidth;
 
     if (w - w * 0.2 < DEFAULT_HEIGHT) {
@@ -33,7 +34,8 @@ const CreatorContainer = (props) => {
             <PosterCanvasContainer {...props}
                                    fontFamily={props.loadedFonts.find(f => f === props.fontFamily) ? props.fontFamily : 'Verdana'}
                                    text={props.text}
-                                   width={w} height={h}/>
+                                   width={w}
+                                   height={h}/>
         </div>
     );
 };
