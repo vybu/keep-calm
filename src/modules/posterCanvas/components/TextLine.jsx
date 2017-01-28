@@ -11,30 +11,9 @@ class TextLine extends React.Component {
         };
     }
 
-    get widthLimit() {
-        return this.props.maxWidth - (this.props.maxWidth * this.props.horizontalPaddingPercent / 100);
-    }
 
-    get width() {
-        return this.refs.txt.getWidth();
-    }
-
-    ensureFitInWidth(isTooWide = true) {
-        const MIN_FONT_SIZE = 8; // current solution to situation where it gets stuck in loop between increasing: decreasing
-
-        if (isTooWide) {
-            if (this.state.forcedFontSize !== null && this.state.forcedFontSize <= MIN_FONT_SIZE) return;
-
-            const val = this.state.forcedFontSize !== null ? Math.max(MIN_FONT_SIZE, this.state.forcedFontSize - 2) : this.props.fontSize -2;
-            this.setState({ forcedFontSize: val, offsetY: -((this.props.fontSize - val) / 2)});
-        } else {
-            if (this.state.forcedFontSize + 2 > this.props.fontSize) {
-                this.setState({ forcedFontSize: null, offsetY: 0});
-            } else {
-                const v = this.state.forcedFontSize + 2;
-                this.setState({ forcedFontSize: v, offsetY: -((this.props.fontSize - v) / 2)});
-            }
-        }
+    componentDidMount() {
+        this.setState({ offsetX: this.width / 2 });
     }
 
     componentDidUpdate() { // FIXME this doesn't really ensure that it won't go into infinite loop
@@ -49,13 +28,35 @@ class TextLine extends React.Component {
         }
     }
 
-    componentDidMount() {
-        this.setState({ offsetX: this.width / 2});
+    get widthLimit() {
+        return this.props.maxWidth - (this.props.maxWidth * this.props.horizontalPaddingPercent / 100);
+    }
+
+    get width() {
+        return this.refs.txt.getWidth();
+    }
+
+    ensureFitInWidth(isTooWide = true) {
+        const MIN_FONT_SIZE = 8; // current solution to situation where it gets stuck in loop between increasing: decreasing
+
+        if (isTooWide) {
+            if (this.state.forcedFontSize !== null && this.state.forcedFontSize <= MIN_FONT_SIZE) return;
+
+            const val = this.state.forcedFontSize !== null ? Math.max(MIN_FONT_SIZE, this.state.forcedFontSize - 2) : this.props.fontSize - 2;
+            this.setState({ forcedFontSize: val, offsetY: -((this.props.fontSize - val) / 2) });
+        } else {
+            if (this.state.forcedFontSize + 2 > this.props.fontSize) {
+                this.setState({ forcedFontSize: null, offsetY: 0 });
+            } else {
+                const v = this.state.forcedFontSize + 2;
+                this.setState({ forcedFontSize: v, offsetY: -((this.props.fontSize - v) / 2) });
+            }
+        }
     }
 
     render() {
-
         const { x, y, text, color, fontFamily, fontSize } = this.props;
+
         return (
             <Text ref="txt"
                   align={'center'}

@@ -22,16 +22,16 @@ function getMainPosterSizeParams() {
 }
 
 const CreatorContainer = (props) => {
-
     if (process.env.SERVER_RENDER) {
         return <Noop/>;
     }
-
     const [w, h] = getMainPosterSizeParams();
+
     return (
         <div className="CreatorContainer">
             <Form {...props}/>
             <PosterCanvasContainer {...props}
+                                   fontFamily={props.loadedFonts.find(f => f === props.fontFamily) ? props.fontFamily : 'Verdana'}
                                    text={props.text}
                                    width={w} height={h}/>
         </div>

@@ -1,12 +1,10 @@
 import React from 'react';
 
-const FontSelector = ({value}) => (
-    <div>
-        <label htmlFor="">Font</label>
-        <select value={value} className="TextInput">
-            <option value="Keep Calm">Keep Calm</option>
-        </select>
-    </div>);
+const FontSelector = ({ value }) => (
+    <select className="FontSelector" value={value}>
+        <option value="Keep Calm">Keep Calm</option>
+    </select>
+);
 
 FontSelector.propTypes = {
     text: React.PropTypes.string

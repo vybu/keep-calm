@@ -5,36 +5,67 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 25px;
   margin: 0 -20px;
+  padding: 5vw;
+  @include for-tablet-landscape-up {
+    padding: 35px;
+  }
 
 }
 
 .CreatorForm {
   flex: 1;
   max-width: 400px;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   width: 100%;
 
+  &-section {
+    h4 {
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-weight: normal;
+    }
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  &-body, &-textInputs {
+    display: flex;
+    flex-direction: column;
+  }
+
   &-stylingControls {
     display: flex;
     height: 50px;
+    margin-bottom: 25px;
 
-    .Temporary {
+    .StylingControl {
       flex: 1;
-      margin: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
       border: 1px solid black;
     }
+
+    .StylingControl:not(:first-child) {
+      margin-left: 10px;
+    }
   }
 }
 
+.FontSelector {
+  width: 100%;
+  background-color: white;
+  padding: 5px;
+}
+
 .TextInput {
-  margin: 4px;
-  padding: 2px;
-  height: 38px;
+  margin: 5px 0;
+  padding: 2px 4px;
+  height: 34px;
   font-size: 20px;
 }

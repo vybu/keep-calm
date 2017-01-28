@@ -40,6 +40,7 @@ class Container extends React.Component {
                 <div className="GalleryPicker-sectionsNavigation">
                     {React.Children.map(this.props.children, child => {
                         const title = child.props.title;
+                        console.log({child});
                         return <SectionTitle onClick={this.selectSection} isActive={activeChild === child} value={title}/>;
                     })}
                 </div>

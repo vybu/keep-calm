@@ -1,25 +1,31 @@
 import React from 'react';
-import TextInput from './TextInput.jsx';
+import StyleSliderPicker from './StyleSliderPicker.jsx';
+import FormSection from './FormSection.jsx';
+import ContentInput from './ContentInput.jsx';
 import FontSelector from './FontSelector.jsx';
-import ColorSelector from './ColorSelector.jsx';
-import TextEffectsSelector from './TextEffectsSelector.jsx';
+
+
+
 
 const Form = (props) => {
-    const setTextFormValue = (...args) => props.setFormValue('text', ...args);
     return (
         <div className="CreatorForm">
-            <div className="CreatorForm-stylingControls">
-                <div className="Temporary">ICON</div>
-                <div className="Temporary">BG COLOR</div>
-                <div className="Temporary">TEXT COLOR</div>
-            </div>
-            <TextInput value={props.text[0]} index={0} setFormValue={setTextFormValue}/>
-            <TextInput value={props.text[1]} index={1} setFormValue={setTextFormValue}/>
-            <TextInput value={props.text[2]} index={2} setFormValue={setTextFormValue}/>
-            <TextInput value={props.text[3]} index={3} setFormValue={setTextFormValue}/>
-            <TextInput value={props.text[4]} index={4} setFormValue={setTextFormValue}/>
-            <FontSelector/>
-            <TextEffectsSelector/>
+            <FormSection title={'Icon'}>
+                <StyleSliderPicker/>
+            </FormSection>
+            <FormSection title={'Text'}>
+                <ContentInput {...props} />
+            </FormSection>
+            <FormSection title={'Font'}>
+                <FontSelector/>
+            </FormSection>
+            <FormSection title={'Background Color'}>
+                <StyleSliderPicker onSelect={(c) => props.setFormValue('backgroundColor', c)}/>
+            </FormSection>
+            <FormSection title={'Text Color'}>
+                <StyleSliderPicker onSelect={(c) => props.setFormValue('textColor', c)}/>
+            </FormSection>
+
         </div>
     );
 };
