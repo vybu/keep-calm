@@ -1,4 +1,7 @@
 .SimpleSlider {
+
+  position: relative;
+  width: 100%;
   display: flex;
   overflow: hidden;
   margin-left: -4px;
@@ -7,6 +10,7 @@
 
   &-container {
     display: flex;
+    width: 100%;
     overflow: auto;
     margin-bottom: -15px;
   }
@@ -15,7 +19,7 @@
     flex: 1;
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.3);
-    margin: 0 4px;
+    margin: 0 5px;
     transition-duration: 0.15s;
     &:hover {
       transform: scale(0.85);

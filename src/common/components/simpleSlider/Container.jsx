@@ -6,15 +6,15 @@ class Container extends React.Component {
         super(props);
     }
     render() {
-
+        const size = `${this.props.size}px`;
         return (
-            <div style={{height: `${this.props.size}px`}} className="SimpleSlider">
+            <div style={{height: size}} className="SimpleSlider">
                 <div className="SimpleSlider-scrollLeft"></div>
                 <div style={{height: `${this.props.size + 18}px`}} className="SimpleSlider-container">
                     {React.Children.map(this.props.children, child => React.cloneElement(child, {size: this.props.size}))}
                 </div>
                 <div className="SimpleSlider-scrollRight"></div>
-                <button style={{minWidth: `${this.props.size}px`}} className="SimpleSlider-moreButton">&#x22EF;</button>
+                <button style={{minWidth:size, maxWidth: size, minHeight: size, maxHeight: size}} className="SimpleSlider-moreButton">&#x22EF;</button>
             </div>
         );
     }
