@@ -12,7 +12,7 @@ export default function(options = defaultOptions, state) {
         const aTag = document.createElement('a');
 
         aTag.setAttribute('href', imageSrc);
-        aTag.setAttribute('download', 'Poster-KeepCalm.top');
+        aTag.setAttribute('download', 'Poster-KeepCalm-top.png');
         aTag.style.display = 'none';
 
         document.body.appendChild(aTag);

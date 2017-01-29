@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import { getAll } from '../selectors';
+import { getAll, handleFontMissMatch } from '../selectors';
 import Form from '../components/form/index.jsx';
 import posterCanvas from '../../posterCanvas';
 import Noop from '../../../common/components/Noop.jsx';
@@ -19,7 +19,6 @@ function getMainPosterSizeParams() {
     } else {
         return [DEFAULT_WIDTH, DEFAULT_HEIGHT];
     }
-
 }
 
 const CreatorContainer = (props) => {
@@ -32,7 +31,6 @@ const CreatorContainer = (props) => {
         <div className="CreatorContainer">
             <Form {...props}/>
             <PosterCanvasContainer {...props}
-                                   fontFamily={props.loadedFonts.find(f => f === props.fontFamily) ? props.fontFamily : 'Verdana'}
                                    text={props.text}
                                    width={w}
                                    height={h}/>
@@ -40,4 +38,4 @@ const CreatorContainer = (props) => {
     );
 };
 
-export default connect(getAll, actions)(CreatorContainer);
+export default connect(state => handleFontMissMatch(getAll(state)), actions)(CreatorContainer);

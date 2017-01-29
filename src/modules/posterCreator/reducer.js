@@ -1,13 +1,17 @@
 import { SET_FORM_VALUE, ADD_LOADED_FONT } from './constants';
 
 const initialState = { // FLAT structure so it's easier to modify it immutably
-    icon: 'default',
+    // form
+    iconText: '§',
+    iconFont: 'Keep Calm',
     backgroundColor: '#c10c06',
     textColor: '#ffffff',
     text: ['KEEP', 'CALM', 'AND', 'CARRY', 'ON'],
     fontFamily: 'Keep Calm',
     textEffects1: null,
-    loadedFonts: []
+
+    placeholderFont: 'sans-serif',
+    loadedFonts: ['sans-serif']
 };
 
 const immutableArrayEdit = (array, newValue, index = null) => {

@@ -16,6 +16,9 @@
   }
 
   &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex: 1;
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.3);

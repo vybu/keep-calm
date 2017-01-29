@@ -15,6 +15,10 @@ posterCreator.services.fontLoader.loadFont(null, 'Keep Calm', () => {
     store.dispatch(posterCreator.actions.addLoadedFont('Keep Calm'));
 });
 
+posterCreator.services.fontLoader.loadFont(null, 'fontello', () => {
+    store.dispatch(posterCreator.actions.addLoadedFont('fontello'));
+});
+
 
 render(
     <Provider store={store}>

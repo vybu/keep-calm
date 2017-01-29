@@ -1,5 +1,6 @@
 import React from 'react';
 import StyleSliderPicker from './StyleSliderPicker.jsx';
+import IconSliderSelector from './IconSliderSelector.jsx';
 import FormSection from './FormSection.jsx';
 import ContentInput from './ContentInput.jsx';
 import FontSelector from './FontSelector.jsx';
@@ -11,7 +12,7 @@ const Form = (props) => {
     return (
         <div className="CreatorForm">
             <FormSection title={'Icon'}>
-                {/*<StyleSliderPicker/>*/}
+                <IconSliderSelector setFormValue={props.setFormValue}/>
                 <div>Coming Soon!</div>
             </FormSection>
             <FormSection title={'Text'}>

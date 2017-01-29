@@ -42,7 +42,7 @@ class PosterCanvas extends React.Component {
     }
 
     render() {
-        const { backgroundColor, text, width, height, fontFamily, textColor } = this.props;
+        const { backgroundColor, text, iconText, iconFont, width, height, fontFamily, textColor } = this.props;
         const [t1, t2, t3, t4, t5, t6] = getSizesAndCoordinates(height);
 
         return (
@@ -53,7 +53,7 @@ class PosterCanvas extends React.Component {
                         height={height}
                         fill={backgroundColor}
                     />
-                    <TextLine color={textColor} maxWidth={width} text="&#0167;" x={width / 2} y={t1.y} fontSize={t1.fontSize}/>
+                    <TextLine color={textColor} maxWidth={width} text={iconText} fontFamily={iconFont} x={width / 2} y={t1.y} fontSize={t1.fontSize}/>
                     <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[0]} x={width / 2} y={t2.y} fontSize={t2.fontSize}/>
                     <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[1]} x={width / 2} y={t3.y} fontSize={t3.fontSize}/>
                     <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[2]} x={width / 2} y={t4.y} fontSize={t4.fontSize}/>
@@ -66,7 +66,8 @@ class PosterCanvas extends React.Component {
 }
 
 PosterCanvas.propTypes = {
-    icon: React.PropTypes.string,
+    iconText: React.PropTypes.string,
+    iconFont: React.PropTypes.string,
     fontFamily: React.PropTypes.string,
     backgroundColor: React.PropTypes.string,
     textColor: React.PropTypes.string,
