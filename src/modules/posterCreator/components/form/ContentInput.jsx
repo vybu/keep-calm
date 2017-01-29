@@ -12,7 +12,7 @@ const ContentInput = ({ text, setFormValue }) => {
 };
 
 ContentInput.propTypes = {
-    text: React.PropTypes.string,
+    text: React.PropTypes.array,
     setFormValue: React.PropTypes.func
 };
 

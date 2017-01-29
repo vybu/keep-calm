@@ -53,7 +53,7 @@ class PosterCanvas extends React.Component {
                         height={height}
                         fill={backgroundColor}
                     />
-                    <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text="&#0167;" x={width / 2} y={t1.y} fontSize={t1.fontSize}/>
+                    <TextLine color={textColor} maxWidth={width} text="&#0167;" x={width / 2} y={t1.y} fontSize={t1.fontSize}/>
                     <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[0]} x={width / 2} y={t2.y} fontSize={t2.fontSize}/>
                     <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[1]} x={width / 2} y={t3.y} fontSize={t3.fontSize}/>
                     <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[2]} x={width / 2} y={t4.y} fontSize={t4.fontSize}/>

@@ -1,13 +1,15 @@
 import React from 'react';
+import services from '../../services';
 
-const FontSelector = ({ value }) => (
-    <select style={{fontFamily: 'Keep Calm'}} className="FontSelector" value={value}>
-        <option style={{fontFamily: 'Keep Calm'}} value="Keep Calm">Keep Calm</option>
+const FontSelector = ({ value, onSelect }) => (
+    <select value={value} onChange={onSelect} style={{ fontFamily: value }} className="FontSelector">
+        {services.fontLoader.availableFonts.map((f, i) => <option style={{fontFamily: 'Muli, Helvetica'}} key={i} value={f}>{f}</option>)}
     </select>
 );
 
 FontSelector.propTypes = {
-    text: React.PropTypes.string
+    value: React.PropTypes.string,
+    onSelect: React.PropTypes.func
 };
 
 

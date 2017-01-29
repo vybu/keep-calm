@@ -18,13 +18,13 @@ const Form = (props) => {
                 <ContentInput {...props} />
             </FormSection>
             <FormSection title={'Font'}>
-                <FontSelector/>
+                <FontSelector value={props.fontFamily} onSelect={c => props.setFontFamily(c.target.value)}/>
             </FormSection>
             <FormSection title={'Background Color'}>
-                <StyleSliderPicker onSelect={(c) => props.setFormValue('backgroundColor', c)}/>
+                <StyleSliderPicker onSelect={c => props.setFormValue('backgroundColor', c)}/>
             </FormSection>
             <FormSection title={'Text Color'}>
-                <StyleSliderPicker onSelect={(c) => props.setFormValue('textColor', c)}/>
+                <StyleSliderPicker onSelect={c => props.setFormValue('textColor', c)}/>
             </FormSection>
 
         </div>

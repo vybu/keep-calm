@@ -11,7 +11,7 @@ import posterCreator from './modules/posterCreator';
 
 const store = configureStore();
 
-posterCreator.services.fontLoader('KeepCalmRegular', () => {
+posterCreator.services.fontLoader.loadFont(null, 'Keep Calm', () => {
     store.dispatch(posterCreator.actions.addLoadedFont('Keep Calm'));
 });
 
