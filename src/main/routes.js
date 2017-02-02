@@ -7,10 +7,12 @@ import History from './components/History.jsx';
 
 
 const routes = (
-    <Route path="/" component={App}>
-        <IndexRedirect to="/generator"/>
-        <Route path="/generator" component={Generator}/>
-        <Route path="/history" component={History}/>
+    <Route>
+        <Route path="/" component={App}>
+            <IndexRedirect to="/generator"/>
+            <Route path="/generator" component={Generator}/>
+            <Route path="/history" component={History}/>
+        </Route>
     </Route>
 );
 

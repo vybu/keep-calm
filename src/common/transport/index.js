@@ -1,13 +1,13 @@
 function toJson(fetchPromise) {
-    return fetchPromise.then(r => r.json());
+    return fetchPromise.then(r => r.status !== 200 ? { isSuccessfull: false } : r.json());
 }
 
 /**
  * Abstraction to handle communication
  */
 class TransportAgent {
-    constructor() {
-        this.base = '';
+    constructor(base = '') {
+        this.base = base;
     }
 
     setBase(base = '') {
@@ -33,16 +33,12 @@ class TransportAgent {
         return resultToJson ? toJson(f) : f;
     }
 
-    fetchPerson(value) {
-        return this.fetch('GET', {uri: `/person/${value}`});
+    setDataById(id, data) {
+        return this.fetch('POST', {uri: '', body: {id, data}});
     }
 
-    fetchFacility(value) {
-        return this.fetch('GET', {uri: `/facility/${value}`});
-    }
-
-    fetchExposure(value) {
-        return this.fetch('GET', {uri: `/exposure/${value}`});
+    getDataById(id) {
+        return this.fetch('GET', {uri: `?id=${id}`});
     }
 }
 

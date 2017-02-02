@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Keep Calm And Carry On Poster Generator</title>
+    <meta name="description" content="Easily build and customize a Keep Calm And Carry On poster with just few clicks.">
+    <meta property="og:site_name" content="https://keepcalm.top/">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet" async>
+          rel="stylesheet">
+</head>
+<body>
+<div id="app"></div>
+<script>"localhost" !== window.location.hostname && (!function(e, t, a, n, o, c, s) {
+    e.GoogleAnalyticsObject = o, e[o] = e[o] || function() {
+            (e[o].q = e[o].q || []).push(arguments)
+        }, e[o].l = 1 * new Date, c = t.createElement(a), s = t.getElementsByTagName(a)[0], c.async = 1, c.src = n, s.parentNode.insertBefore(c, s)
+}(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga"), ga("create", "UA-90721490-1", "auto"), ga("send", "pageview"))</script>
+
+<script>
+
+    function makeAltText(formConfig) {
+        return formConfig.text.join(' ');
+    }
+
+    function createImgElement(src, alt) {
+        var el = document.createElement('img');
+        el.src = src;
+        el.alt = alt;
+        return el;
+    }
+
+    function getId() {
+        var reg = /\/s\/([^\.)]*)/;
+        var result = reg.exec(window.location.pathname);
+        if (result) return result[1];
+        else return null;
+    }
+
+    function loadData(id, cb) {
+        var request = new XMLHttpRequest();
+        request.open('GET', '/id=' + id, true);
+
+        request.onload = function() {
+            if (request.status == 200) {
+                cb(request.responseText);
+            } else {
+                console.error('Could not get can img data. Status: ', request.status);
+            }
+        };
+
+        request.onerror = function() {
+            console.error('Could not get can img data');
+        };
+
+        request.send();
+    }
+
+    loadData(getId(), function(response) {
+        var r = JSON.parse(response);
+
+        if (r.data && r.data.imageSrc) {
+            var img = createImgElement(r.data.imageSrc, r.data.formConfig ? makeAltText(r.data.formConfig) : '');
+            document.body.appendChild(img);
+        }
+    })
+
+
+
+</script>
+
+</body>
+</html>

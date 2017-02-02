@@ -9,3 +9,16 @@ export const setFontFamily = value => {
         dispatch(setFormValue('fontFamily', value));
     };
 };
+
+export const loadFormStateFromJson = (formState) => {
+    return dispatch => {
+        Object.keys(formState).forEach(field => {
+            const val = formState[field];
+            dispatch(setFormValue(field, val));
+
+            if (/font/.test(field)) { // FIXME font loading should be one solution at one place, how it's all over...
+                services.fontLoader.loadFont(null, val, () => dispatch(addLoadedFont(val)));
+            }
+        });
+    };
+};

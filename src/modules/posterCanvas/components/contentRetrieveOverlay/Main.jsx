@@ -8,7 +8,7 @@ const Main = ({ dispatch }) => (
     <div className="ContentRetrieveOverlay-main">
         <OptionButton onClick={() => dispatch(retrieveContent(actions.SERVICE_DOWNLOAD))} name="Download"/>
         <OptionButton onClick={() => dispatch(retrieveContent(actions.SERVICE_PRINT))} name="Print"/>
-        {/*<OptionButton onClick={() => dispatch(retrieveContent(actions.SERVICE_SHARE_URL))} name="Share Url"/>*/}
+        <OptionButton onClick={() => dispatch(retrieveContent(actions.SERVICE_SHARE_URL))} name="Share Url"/>
     </div>
 );
 

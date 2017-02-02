@@ -35,7 +35,7 @@ class History extends React.Component {
                         and became known worldwide. Thus followed commercialization and companies started putting Keep
                         Calm
                         And Cary On on all kinds of products with different phrases and icons</p>
-                    <p>Nowadays it is variations of these posters are used for everything. Usually top words "Keep Calm
+                    <p>Nowadays variations of these posters are used for everything. Usually top words "Keep Calm
                         And"
                         are kept in place, while lower part of the text, color, and icon are adjusted for the purpose.
                         read more on <a href="https://en.wikipedia.org/wiki/Keep_Calm_and_Carry_On" target="_blank">Wikipedia</a>

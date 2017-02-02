@@ -13,7 +13,6 @@ const Form = (props) => {
         <div className="CreatorForm">
             <FormSection title={'Icon'}>
                 <IconSliderSelector setFormValue={props.setFormValue}/>
-                <div>Coming Soon!</div>
             </FormSection>
             <FormSection title={'Text'}>
                 <ContentInput {...props} />

@@ -23,6 +23,11 @@ app.get('/', (request, response) => {
     response.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
+
+app.get(/.*\.jpg/, (request, response) => {
+    response.sendFile(path.join(__dirname, '../dist/sharedImg.html'));
+});
+
 app.listen(3030, () => {
     console.log('Express running! at', 3030);
 });

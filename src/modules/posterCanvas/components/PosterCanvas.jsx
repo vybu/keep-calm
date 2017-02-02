@@ -79,7 +79,9 @@ PosterCanvas.propTypes = {
 };
 
 PosterCanvas.defaultProps = {
-    icon: 'default',
+    iconText: '§',
+    iconFont: 'Keep Calm',
+    fontFamily: 'Keep Calm',
     backgroundColor: '#c10c06',
     textColor: '#ffffff',
     width: 600,

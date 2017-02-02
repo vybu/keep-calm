@@ -38,29 +38,3 @@ describe('TransportAgent core', () => {
         expect(json).toEqual({ success: 'true' });
     });
 });
-
-describe('TransportAgent api calls', () => {
-    it('implements fetchPerson', async() => {
-        const personId = '123';
-        fetchMock.getOnce(`/person/${personId}`, { calledWith: personId });
-
-        const result = await TransportAgent.fetchPerson(personId);
-        expect(result).toEqual({ calledWith: personId });
-    });
-
-    it('implements fetchFacility', async() => {
-        const facilityId = '123';
-        fetchMock.getOnce(`/facility/${facilityId}`, { calledWith: facilityId });
-
-        const result = await TransportAgent.fetchFacility(facilityId);
-        expect(result).toEqual({ calledWith: facilityId });
-    });
-
-    it('implements fetchExposure', async() => {
-        const exposureId = '123';
-        fetchMock.getOnce(`/exposure/${exposureId}`, { calledWith: exposureId });
-
-        const result = await TransportAgent.fetchExposure(exposureId);
-        expect(result).toEqual({ calledWith: exposureId });
-    });
-});

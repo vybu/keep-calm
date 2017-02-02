@@ -5,9 +5,12 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 
+import transportAgent from './common/transport';
 import routes from './main/routes';
 import configureStore from './main/store/configureStore';
 import posterCreator from './modules/posterCreator';
+
+transportAgent.setBase(process.env.NODE_ENV === 'production' ? 'api' : 'http://localhost:3005');
 
 const store = configureStore();
 
