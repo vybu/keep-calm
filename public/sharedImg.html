@@ -8,10 +8,8 @@
     <meta name="description" content="Easily build and customize a Keep Calm And Carry On poster with just few clicks.">
     <meta property="og:site_name" content="https://keepcalm.top/">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet" async>
-          rel="stylesheet">
 </head>
 <body>
-<div id="app"></div>
 <script>"localhost" !== window.location.hostname && (!function(e, t, a, n, o, c, s) {
     e.GoogleAnalyticsObject = o, e[o] = e[o] || function() {
             (e[o].q = e[o].q || []).push(arguments)
@@ -40,7 +38,7 @@
 
     function loadData(id, cb) {
         var request = new XMLHttpRequest();
-        request.open('GET', '/id=' + id, true);
+        request.open('GET', window.location.hostname === 'localhost' ? 'http://localhost:3005/?id=' + id : '/?id=' + id, true);
 
         request.onload = function() {
             if (request.status == 200) {
@@ -58,7 +56,12 @@
     }
 
     loadData(getId(), function(response) {
-        var r = JSON.parse(response);
+        try {
+            console.log(response);
+            var r = JSON.parse(response);
+        } catch (e) {
+            console.log(e);
+        }
 
         if (r.data && r.data.imageSrc) {
             var img = createImgElement(r.data.imageSrc, r.data.formConfig ? makeAltText(r.data.formConfig) : '');

@@ -13,16 +13,26 @@ import config from '../webpack.config.dev';
 
 const bundler = webpack(config);
 
+
+const serverMain = browserSync.create('main');
+
 // Run Browsersync and use middleware for Hot Module Replacement
-browserSync({
+serverMain.init({
     port: 3000,
     ui: {
         port: 3001
     },
     server: {
         baseDir: ['src', 'public'],
-
+        routes: { '/s': 'sharedImg.html' },
         middleware: [
+            (req, res, next) => {
+                if (/\/s\//.test(req.url)) {
+                    req.url = '/sharedImg.html';
+                    console.log(`rewriting ${req.url} to /sharedImg.html`);
+                }
+                next();
+            },
             historyApiFallback(),
 
             webpackDevMiddleware(bundler, {
