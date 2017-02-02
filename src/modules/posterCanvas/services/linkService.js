@@ -4,8 +4,8 @@ import posterCreator from '../../posterCreator';
 import transportAgent from '../../../common/transport';
 
 const defaultOptions = {
-    width: 600,
-    height: 700
+    width: 500,
+    height: 583
 };
 
 

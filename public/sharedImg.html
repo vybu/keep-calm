@@ -8,13 +8,84 @@
     <meta name="description" content="Easily build and customize a Keep Calm And Carry On poster with just few clicks.">
     <meta property="og:site_name" content="https://keepcalm.top/">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet" async>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Muli', Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        h1 {
+            font-weight: normal;
+            font-size: 2.6rem;
+            color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .Separator {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+        }
+
+        #ImgContainer {
+            margin-top: 2rem;
+        }
+
+        .Img {
+            width: 100%;
+        }
+
+        .Controls {
+            margin-top: 1.5rem;
+            display: flex;
+        }
+
+        .Controls a {
+            padding-bottom: 8px;
+            text-align: center;
+            flex: 1;
+            height: 32px;
+        }
+
+        .Controls a:hover {
+            font-size: 1.1rem;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.9);
+        }
+
+        a {
+            transition-duration: 0.15s;
+            text-decoration: none;
+        }
+
+        a:visited, a:active {
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+
+    </style>
+    <script>"localhost" !== window.location.hostname && (!function(e, t, a, n, o, c, s) {
+        e.GoogleAnalyticsObject = o, e[o] = e[o] || function() {
+                (e[o].q = e[o].q || []).push(arguments)
+            }, e[o].l = 1 * new Date, c = t.createElement(a), s = t.getElementsByTagName(a)[0], c.async = 1, c.src = n, s.parentNode.insertBefore(c, s)
+    }(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga"), ga("create", "UA-90721490-1", "auto"), ga("send", "pageview"))</script>
 </head>
 <body>
-<script>"localhost" !== window.location.hostname && (!function(e, t, a, n, o, c, s) {
-    e.GoogleAnalyticsObject = o, e[o] = e[o] || function() {
-            (e[o].q = e[o].q || []).push(arguments)
-        }, e[o].l = 1 * new Date, c = t.createElement(a), s = t.getElementsByTagName(a)[0], c.async = 1, c.src = n, s.parentNode.insertBefore(c, s)
-}(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga"), ga("create", "UA-90721490-1", "auto"), ga("send", "pageview"))</script>
+
+<main>
+    <h1><a href="/">KeepCalm.top</a></h1>
+    <div class="Separator"></div>
+    <div id="ImgContainer"></div>
+    <div class="Controls">
+        <a id="EditThis" href="/generator">Edit This Poster</a>
+        <a href="/generator">Make Your Own</a>
+    </div>
+</main>
 
 <script>
 
@@ -23,10 +94,7 @@
     }
 
     function createImgElement(src, alt) {
-        var el = document.createElement('img');
-        el.src = src;
-        el.alt = alt;
-        return el;
+        return '<img class="Img" src="' + src + '" alt="' + alt + '"/>';
     }
 
     function getId() {
@@ -65,9 +133,15 @@
 
         if (r.data && r.data.imageSrc) {
             var img = createImgElement(r.data.imageSrc, r.data.formConfig ? makeAltText(r.data.formConfig) : '');
-            document.body.appendChild(img);
+            document.getElementById('ImgContainer').innerHTML = img;
         }
-    })
+    });
+
+    document.getElementById('EditThis').addEventListener('click', function(ev) {
+        ev.preventDefault();
+        window.open('/generator' + '?id=' + getId());
+    });
+
 
 
 
