@@ -1,6 +1,8 @@
 import React from 'react';
 import pageStructure from '../../modules/pageStructure';
+import overlayModal from '../../modules/overlayModal';
 
+const { OverlayModal } = overlayModal.containers;
 const { PageNav, PageFooter } = pageStructure.components;
 
 class App extends React.Component {
@@ -11,8 +13,9 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
+                <OverlayModal/>
                 <PageNav />
-                {this.props.children}
+                    {this.props.children}
                 <PageFooter/>
             </div>
         );
