@@ -1,5 +1,6 @@
 import React from 'react';
-import SectionTitle from './SectionTitle.jsx';
+import SectionsNav from './SectionsNav.jsx';
+import Header from './Header.jsx';
 
 
 class Container extends React.Component {
@@ -36,15 +37,12 @@ class Container extends React.Component {
 
         return (
             <div className="GalleryPicker">
-                <div className="GalleryPicker-sectionsNavigation">
-                    {React.Children.map(this.props.children, child => {
-                        const title = child.props.title;
-                        console.log({child});
-                        return <SectionTitle onClick={this.selectSection} isActive={activeChild === child} value={title}/>;
-                    })}
-                </div>
-                <div className="GalleryPicker-sections">
-                    {activeChild}
+                <Header value={this.props.title} onClose={this.props.onClose}/>
+                <div className="GalleryPicker-body">
+                    {this.props.showNav ? <SectionsNav children={this.props.children} selectSection={this.selectSection} activeChild={activeChild} /> : null}
+                    <div className="GalleryPicker-sections">
+                        {activeChild}
+                    </div>
                 </div>
             </div>
         );
@@ -55,7 +53,10 @@ Container.propTypes = {
     children: React.PropTypes.oneOfType([
         React.PropTypes.arrayOf(React.PropTypes.node),
         React.PropTypes.node
-    ])
+    ]),
+    onClose: React.PropTypes.func,
+    title: React.PropTypes.string,
+    showNav: React.PropTypes.bool
 };
 
 export default Container;

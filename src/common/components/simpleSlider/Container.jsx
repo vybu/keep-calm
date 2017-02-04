@@ -14,7 +14,9 @@ class Container extends React.Component {
                     {React.Children.map(this.props.children, child => React.cloneElement(child, {size: this.props.size}))}
                 </div>
                 <div className="SimpleSlider-scrollRight"></div>
-                <button style={{minWidth:size, maxWidth: size, minHeight: size, maxHeight: size}} className="SimpleSlider-moreButton">&#x22EF;</button>
+                {this.props.onMoreButtonClick ? <button style={{minWidth:size, maxWidth: size, minHeight: size, maxHeight: size}}
+                                                        onClick={this.props.onMoreButtonClick}
+                                                        className="SimpleSlider-moreButton">&#x22EF;</button> : null}
             </div>
         );
     }
@@ -26,12 +28,13 @@ Container.propTypes = {
         React.PropTypes.node
     ]),
     size: React.PropTypes.number,
-    moreButton: React.PropTypes.bool
+    onMoreButtonClick: React.PropTypes.func
 };
 
 Container.defaultProps = {
     size: 32,
-    moreButton: false
+    moreButton: false,
+    onMoreButtonClick: null
 };
 
 export default Container;

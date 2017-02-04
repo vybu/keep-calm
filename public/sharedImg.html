@@ -63,7 +63,7 @@
             text-decoration: none;
         }
 
-        a:visited, a:active {
+        a, a:visited, a:active {
             color: rgba(0, 0, 0, 0.8);
         }
 
@@ -139,7 +139,7 @@
 
     document.getElementById('EditThis').addEventListener('click', function(ev) {
         ev.preventDefault();
-        window.open('/generator' + '?id=' + getId());
+        window.open('/generator' + '?id=' + getId(), '_self');
     });
 
 </script>
