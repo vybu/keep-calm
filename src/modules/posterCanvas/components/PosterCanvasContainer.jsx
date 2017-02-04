@@ -12,12 +12,23 @@ class PosterCanvasContainer extends React.Component {
     render() {
         return (
             <div className="PosterCanvasContainer">
-                <PosterCanvas {...this.props} height={this.props.height -20} width={this.props.width - 16} />
-                <ContentRetrieveOverlay />
-                <ContentRetrieveExternal />
+                <PosterCanvas {...this.props} height={this.props.height - 20} width={this.props.width - 16}/>
+                {this.props.overlayButtons ? <ContentRetrieveOverlay/> : null}
+                {this.props.externalButtons ? <ContentRetrieveExternal/> : null}
             </div>
         );
     }
 }
+
+
+PosterCanvasContainer.propTypes = {
+    overlayButtons: React.PropTypes.bool,
+    externalButtons: React.PropTypes.bool
+};
+
+PosterCanvasContainer.defaultProps = {
+    overlayButtons: false,
+    externalButtons: true
+};
 
 export default PosterCanvasContainer;
