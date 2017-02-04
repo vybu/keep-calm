@@ -1,6 +1,5 @@
 
 .icon-sun-inv:before { content: '\31'; } /* '1' */
-.icon-trash:before { content: '\66'; } /* 'f' */
 .icon-crown:before { content: '\2190'; } /* '←' */
 .icon-giraffe:before { content: '\2191'; } /* '↑' */
 .icon-guidedog:before { content: '\2192'; } /* '→' */
@@ -68,6 +67,7 @@
 .icon-book:before { content: '\21d8'; } /* '⇘' */
 .icon-graduation-cap:before { content: '\21d9'; } /* '⇙' */
 .icon-ok:before { content: '\21da'; } /* '⇚' */
+.icon-trash:before { content: '\21dd'; } /* '⇝' */
 .icon-heart-2:before { content: '\21f3'; } /* '⇳' */
 .icon-heart-filled:before { content: '\25b2'; } /* '▲' */
 .icon-emo-happy:before { content: '\25b6'; } /* '▶' */
