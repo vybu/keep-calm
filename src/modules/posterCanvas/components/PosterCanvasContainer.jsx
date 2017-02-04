@@ -11,7 +11,7 @@ class PosterCanvasContainer extends React.Component {
 
     render() {
         return (
-            <div style={{maxHeight: `${this.props.height}px`}} className="PosterCanvasContainer">
+            <div className="PosterCanvasContainer">
                 <PosterCanvas {...this.props} height={this.props.height -20} width={this.props.width - 16} />
                 <ContentRetrieveOverlay />
                 <ContentRetrieveExternal />

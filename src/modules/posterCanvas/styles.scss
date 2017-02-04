@@ -1,11 +1,20 @@
 
 .PosterCanvasContainer {
   display: flex;
+  flex-direction: column;
   position: relative;
   //border: 1px solid $light-border-color;
   box-shadow: $bs-medium;
   padding: 10px;
   border-radius: $br-medium;
+
+  @include for-desktop-up {
+    flex-direction: row;
+  }
+}
+
+.PosterCanvas {
+  flex-direction: row;
 }
 
 .ContentRetrieveOverlay, .ContentRetrieveOverlay-main {
@@ -18,10 +27,11 @@
 
 
 .ContentRetrieveOverlay {
+  display: none;
 
-  @include for-desktop-up {
-    display: none;
-  }
+  //@include for-desktop-up {
+  //  display: none;
+  //}
 
   &-main {
     background-color: rgba(1, 1, 1, 0.2);
@@ -37,7 +47,12 @@
 }
 
 .ContentRetrieveExternal {
-  display: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 10px;
+
+
   @include for-desktop-up {
     width: 200px;
     height: 100%;
@@ -45,7 +60,6 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 15px;
-
   }
 
   &-optionButton {

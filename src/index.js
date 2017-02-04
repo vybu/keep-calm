@@ -10,7 +10,7 @@ import routes from './main/routes';
 import configureStore from './main/store/configureStore';
 import posterCreator from './modules/posterCreator';
 
-transportAgent.setBase(process.env.NODE_ENV === 'production' ? 'api' : 'http://localhost:3005');
+transportAgent.setBase(process.env.NODE_ENV === 'production' ? 'api/jsonserver' : 'http://localhost:3005');
 
 const store = configureStore();
 

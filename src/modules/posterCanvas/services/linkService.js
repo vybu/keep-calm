@@ -29,7 +29,7 @@ export default function(options = defaultOptions, state, dispatch) {
     const formConfig = {...posterCreator.selectors.getOnlyFormFields(posterCreatorState)};
 
     getImgUrl({...posterCreatorState, ...options}, imageSrc => {
-        saveInDb(id, {formConfig, imageSrc});
+        saveInDb(id, { formConfig, imageSrc});
         dispatch(overlayModal.actions.showOverlayModal(overlayModal.constants.TYPE_SHARE_LINK, `https://keepcalm.top/s/${id}`));
     });
 

@@ -46,7 +46,7 @@ class PosterCanvas extends React.Component {
         const [t1, t2, t3, t4, t5, t6] = getSizesAndCoordinates(height);
 
         return (
-            <Stage width={width} height={height}>
+            <Stage className="PosterCanvas" width={width} height={height}>
                 <Layer ref="PosterCanvas">
                     <Rect
                         width={width}

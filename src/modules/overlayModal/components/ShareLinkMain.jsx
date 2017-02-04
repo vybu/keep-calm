@@ -1,5 +1,4 @@
 import React from 'react';
-import Clipboard from 'clipboard';
 
 
 class ShareLinkMain extends React.Component {
@@ -7,31 +6,25 @@ class ShareLinkMain extends React.Component {
     constructor(props) {
         super(props);
 
+        this.tryCopy = this.tryCopy.bind(this);
+
         this.state = {
             hasCopied: false
         };
     }
 
-    componentDidMount() {
-        this.clipboard = new Clipboard('.ShareLink-value', {
-            text: () => this.props.linkValue
-        });
-
-        this.clipboard.on('success', e => {
-            if (e.text === this.props.linkValue) {
-                this.setState({ hasCopied: true });
-            }
-        });
-    }
-
-    componentWillUnmount() {
-        this.clipboard.destroy();
+    tryCopy() {
+        this.valueField.select();
+        try {
+            document.execCommand('copy');
+            this.setState({ hasCopied: true });
+        } catch (e) {}
     }
 
     render() {
         return (
             <div className="ShareLink">
-                <input ref={r => this.valueField = r} onClick={() => this.valueField.select()}
+                <input ref={r => this.valueField = r} onClick={this.tryCopy}
                        className="ShareLink-value"
                        defaultValue={this.props.linkValue}/>
             </div>

@@ -8,9 +8,8 @@ import ShareLinkMain from '../components/ShareLinkMain.jsx';
 import SizeSelectionMain from '../components/SizeSelectionMain.jsx';
 
 const OverlayModal = (props) => {
-    console.log(props);
     if (props.type === contants.TYPE_NOT_VISIBLE) {
-        return <span></span>;
+        return null;
     } else if (props.type === contants.TYPE_SHARE_LINK) {
         return (
             <OverlayModalBase {...props}>
@@ -22,7 +21,7 @@ const OverlayModal = (props) => {
                 <SizeSelectionMain {...props}/>
             </OverlayModalBase>);
     } else {
-        return <span></span>;
+        return null;
     }
 
 

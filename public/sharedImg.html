@@ -106,7 +106,7 @@
 
     function loadData(id, cb) {
         var request = new XMLHttpRequest();
-        request.open('GET', window.location.hostname === 'localhost' ? 'http://localhost:3005/?id=' + id : '/?id=' + id, true);
+        request.open('GET', window.location.hostname === 'localhost' ? 'http://localhost:3005/?id=' + id : '/api/jsonserver?id=' + id, true);
 
         request.onload = function() {
             if (request.status == 200) {
@@ -141,9 +141,6 @@
         ev.preventDefault();
         window.open('/generator' + '?id=' + getId());
     });
-
-
-
 
 </script>
 

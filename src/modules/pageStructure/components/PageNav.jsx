@@ -8,8 +8,8 @@ const PageNav = () => (
             <span className="PageNav-logoText">KeepCalm.top</span>
         </div>
         <div className="PageNav-controls">
-            <Link className="PageNav-controlsItem" to={'/generator'}>Generator</Link>
-            <Link className="PageNav-controlsItem" to={'/history'}>History</Link>
+            <Link activeClassName="is-active" className="PageNav-controlsItem" to={'/generator'}>Generator</Link>
+            <Link activeClassName="is-active" className="PageNav-controlsItem" to={'/history'}>History</Link>
         </div>
     </nav>
 );
