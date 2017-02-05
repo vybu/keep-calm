@@ -1,5 +1,5 @@
 import React from 'react';
-import StyleSliderPicker from './StyleSliderPicker.jsx';
+import StyleSelector from './stylePicker/index.jsx';
 import IconSelector from './iconSelector/index.jsx';
 import FormSection from './FormSection.jsx';
 import ContentInput from './ContentInput.jsx';
@@ -21,10 +21,10 @@ const Form = (props) => {
                 <FontSelector value={props.fontFamily} onSelect={c => props.setFontFamily(c.target.value)}/>
             </FormSection>
             <FormSection title={'Background Color'}>
-                <StyleSliderPicker onSelect={c => props.setFormValue('backgroundColor', c)}/>
+                <StyleSelector value={props.backgroundColor} onSelect={c => props.setFormValue('backgroundColor', c)}/>
             </FormSection>
             <FormSection title={'Text Color'}>
-                <StyleSliderPicker onSelect={c => props.setFormValue('textColor', c)}/>
+                <StyleSelector value={props.textColor} onSelect={c => props.setFormValue('textColor', c)}/>
             </FormSection>
 
         </div>

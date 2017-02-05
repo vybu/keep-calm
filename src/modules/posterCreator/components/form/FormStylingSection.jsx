@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Item } from '../../../../common/components/simpleSlider';
-import colorCodes from '../../../../common/colorCodesHEX';
+import colorCodes from './stylePicker/colors';
 
 const FormStylingSection = (props) => (
     <div className="CreatorForm-stylingSection">

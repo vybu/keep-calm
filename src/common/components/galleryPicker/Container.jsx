@@ -1,10 +1,11 @@
 import React from 'react';
 import SectionsNav from './SectionsNav.jsx';
 import Header from './Header.jsx';
+import BottomSpace from './BottomSpace.jsx';
 
 
 class Container extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             activeSection: null
@@ -31,19 +32,32 @@ class Container extends React.Component {
         return activeChild;
     }
 
-    render() {
+    getBottomSpace() {
+        let bottomSpace = null;
+        React.Children.forEach(this.props.children, child => {
+            if (child.type === BottomSpace) {
+                bottomSpace = child;
+            }
+        });
 
+        return bottomSpace;
+    }
+
+    render() {
+        const bottomSpace = this.getBottomSpace();
         const activeChild = this.getActiveChild();
 
         return (
             <div className="GalleryPicker">
                 <Header value={this.props.title} onClose={this.props.onClose}/>
                 <div className="GalleryPicker-body">
-                    {this.props.showNav ? <SectionsNav children={this.props.children} selectSection={this.selectSection} activeChild={activeChild} /> : null}
+                    {this.props.showNav ? <SectionsNav children={this.props.children} selectSection={this.selectSection}
+                                                       activeChild={activeChild}/> : null}
                     <div className="GalleryPicker-sections">
                         {activeChild}
                     </div>
                 </div>
+                {bottomSpace}
             </div>
         );
     }
