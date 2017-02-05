@@ -55,10 +55,20 @@
 
 .SizeSelection {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  max-width: 620px;
+  height: 420px;
+  width: 68vw;
+
+  @include for-phone-only {
+    height: 300px;
+    width: 82vw;
+  }
+
+  @include for-tablet-landscape-up {
+    width: 620px;
+  }
 
   h3 {
     color: rgba(0, 0, 0, 0.8);
@@ -71,6 +81,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
   }
 
   &-item {
@@ -83,8 +94,10 @@
     cursor: pointer;
     margin: 1%;
     padding: 2%;
-    min-width: 25%;
-    max-width: 25%;
+    max-width: 150px;
+    max-height: 150px;
+    min-width: 18vw;
+    min-height: 18vw;
     flex: 1;
     border-radius: $br-medium;
     border: 1px solid $light-border-color;
@@ -101,14 +114,62 @@
     @include for-tablet-landscape-up {
       max-width: 150px;
       min-width: 150px;
-      height: 150px;
+      max-height: 150px;
+      min-height: 150px;
+    }
+
+    @include for-phone-only {
+      min-width: 24vw;
+      max-width: 24vw;
+      height: 24vw;
+
     }
 
   }
 
   &-itemMeasurements {
-   @include for-phone-only {
-     display: none;
-   }
+    display: none;
+    @include for-tablet-landscape-up {
+      display: block;
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 100%;
+    border-radius: $br-medium;
+    border: 1px solid $light-border-color;
+    padding: 4%;
+
+    label {
+      margin-bottom: 0.4rem;
+    }
+
+    input {
+      border: 1px solid $light-border-color;
+      color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 0.2rem;
+      height: 2.5rem;
+      font-size: 1.5rem;
+    }
+
+    button {
+      border-radius: $br-medium;
+      background-color: rgba(0, 0, 0, 0.1);
+      border: 1px solid $light-border-color;
+      height: 2.5rem;
+      font-size: 1.2rem;
+    }
+
+    &Group {
+      flex: 1;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+
+    }
   }
 }
