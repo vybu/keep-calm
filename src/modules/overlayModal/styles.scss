@@ -9,10 +9,13 @@
   display: flex;
 
   &-main {
+    display: flex;
+    flex-direction: column;
     position: relative;
     border-radius: $br-medium;
     background-color: white;
     padding: 3rem;
+    max-width: 94vw;
 
     @include for-phone-only {
       padding: 1.5rem;
@@ -43,9 +46,69 @@
     min-width: 500px;
 
     @include for-phone-only {
-      min-width: 85vw;
+      min-width: 82vw;
       padding: 0.5rem;
       font-size: 1.2rem;
     }
+  }
+}
+
+.SizeSelection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 620px;
+
+  h3 {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  &-sizes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &-item {
+
+    h4 {
+      text-align: center;
+    }
+
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    margin: 1%;
+    padding: 2%;
+    min-width: 25%;
+    max-width: 25%;
+    flex: 1;
+    border-radius: $br-medium;
+    border: 1px solid $light-border-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: black;
+      border: 1px solid black;
+    }
+
+    @include for-tablet-landscape-up {
+      max-width: 150px;
+      min-width: 150px;
+      height: 150px;
+    }
+
+  }
+
+  &-itemMeasurements {
+   @include for-phone-only {
+     display: none;
+   }
   }
 }

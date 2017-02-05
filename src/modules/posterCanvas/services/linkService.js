@@ -12,7 +12,7 @@ const defaultOptions = {
 
 function saveInDb(id, data) {
     transportAgent.setDataById(id, data)
-        .then(({isSuccessfull = false}) => {
+        .then(({ isSuccessfull = false }) => {
             if (isSuccessfull) {
                 console.log(`Showing you modal where url is ${window.location.origin}/s/${id}.jpg`);
                 console.log(`Showing you modal where url is ${window.location.origin}/s/${id}`);
@@ -26,11 +26,11 @@ function saveInDb(id, data) {
 export default function(options = defaultOptions, state, dispatch) {
     const id = shortid.generate();
     const posterCreatorState = posterCreator.selectors.getAll(state);
-    const formConfig = {...posterCreator.selectors.getOnlyFormFields(posterCreatorState)};
+    const formConfig = { ...posterCreator.selectors.getOnlyFormFields(posterCreatorState) };
 
-    getImgUrl({...posterCreatorState, ...options}, imageSrc => {
-        saveInDb(id, { formConfig, imageSrc});
-        dispatch(overlayModal.actions.showOverlayModal(overlayModal.constants.TYPE_SHARE_LINK, `https://keepcalm.top/s/${id}`));
+    getImgUrl({ ...posterCreatorState, ...options }, imageSrc => {
+        saveInDb(id, { formConfig, imageSrc });
+        dispatch(overlayModal.actions.showOverlayModal(overlayModal.constants.TYPE_SHARE_LINK, { linkValue: `https://keepcalm.top/s/${id}` }));
     });
 
 
