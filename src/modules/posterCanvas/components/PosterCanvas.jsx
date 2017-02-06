@@ -46,21 +46,24 @@ class PosterCanvas extends React.Component {
         const [t1, t2, t3, t4, t5, t6] = getSizesAndCoordinates(height);
 
         return (
-            <Stage className="PosterCanvas" width={width} height={height}>
-                <Layer ref="PosterCanvas">
-                    <Rect
-                        width={width}
-                        height={height}
-                        fill={backgroundColor}
-                    />
-                    <TextLine color={textColor} maxWidth={width} text={iconText} fontFamily={iconFont} x={width / 2} y={t1.y} fontSize={t1.fontSize}/>
-                    <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[0]} x={width / 2} y={t2.y} fontSize={t2.fontSize}/>
-                    <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[1]} x={width / 2} y={t3.y} fontSize={t3.fontSize}/>
-                    <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[2]} x={width / 2} y={t4.y} fontSize={t4.fontSize}/>
-                    <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[3]} x={width / 2} y={t5.y} fontSize={t5.fontSize}/>
-                    <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[4]} x={width / 2} y={t6.y} fontSize={t6.fontSize}/>
-                </Layer>
-            </Stage>
+            <div>
+                <div style={{width: `${width}px`, height: `${height}px`}} className="PosterCanvas-overlay"></div>
+                <Stage className="PosterCanvas" width={width} height={height}>
+                    <Layer ref="PosterCanvas">
+                        <Rect
+                            width={width}
+                            height={height}
+                            fill={backgroundColor}
+                        />
+                        <TextLine color={textColor} maxWidth={width} text={iconText} fontFamily={iconFont} x={width / 2} y={t1.y} fontSize={t1.fontSize}/>
+                        <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[0]} x={width / 2} y={t2.y} fontSize={t2.fontSize}/>
+                        <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[1]} x={width / 2} y={t3.y} fontSize={t3.fontSize}/>
+                        <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[2]} x={width / 2} y={t4.y} fontSize={t4.fontSize}/>
+                        <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[3]} x={width / 2} y={t5.y} fontSize={t5.fontSize}/>
+                        <TextLine color={textColor} fontFamily={fontFamily} maxWidth={width} text={text[4]} x={width / 2} y={t6.y} fontSize={t6.fontSize}/>
+                    </Layer>
+                </Stage>
+            </div>
         );
     }
 }
