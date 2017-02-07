@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import PosterCanvas from '../../components/PosterCanvas.jsx';
+import { PosterCanvas} from '../../components/PosterCanvas.jsx';
 
 
 function getImgUrlHoc(props, onGetImgUrl) {

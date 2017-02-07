@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import TransportAgent from '../../../common/transport';
 import * as actions from '../actions';
-import { getAll, handleFontMissMatch } from '../selectors';
+import { getAll } from '../selectors';
 import Form from '../components/form/index.jsx';
 import posterCanvas from '../../posterCanvas';
 import Noop from '../../../common/components/Noop.jsx';
@@ -84,4 +84,4 @@ class CreatorContainer extends React.Component {
     }
 }
 
-export default connect(state => handleFontMissMatch(getAll(state)), actions)(CreatorContainer);
+export default connect(getAll, actions)(CreatorContainer);

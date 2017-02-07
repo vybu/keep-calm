@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { getAll } from '../selectors';
+import * as actions  from '../actions';
 import { Layer, Rect, Stage } from 'react-konva';
 import TextLine from './TextLine.jsx';
 
@@ -27,10 +30,10 @@ function getSizesAndCoordinates(height) {
 }
 
 
-class PosterCanvas extends React.Component {
+export class PosterCanvas extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     componentDidMount() {
@@ -41,8 +44,22 @@ class PosterCanvas extends React.Component {
         return this.refs.PosterCanvas.toDataURL();
     }
 
+    getFontFontFamilyToUse(fontFamily) {
+        const { loadedFonts } = this.props;
+
+        if (loadedFonts && !loadedFonts.includes(fontFamily)) {
+            this.props.loadFont(fontFamily);
+            return this.props.placeholderFont; // TODO could also return previous font, could also add a middleware so fonts are loaded faster
+        }
+
+        return fontFamily;
+    }
+
     render() {
-        const { backgroundColor, text, iconText, iconFont, width, height, fontFamily, textColor } = this.props;
+        const { backgroundColor, text, iconText, iconFont: iF, width, height, fontFamily: fF, textColor } = this.props;
+        const fontFamily = this.getFontFontFamilyToUse(fF);
+        const iconFont = this.getFontFontFamilyToUse(iF);
+
         const [t1, t2, t3, t4, t5, t6] = getSizesAndCoordinates(height);
 
         return (
@@ -94,4 +111,4 @@ PosterCanvas.defaultProps = {
     getImgUrl: () => {}
 };
 
-export default PosterCanvas;
+export default connect(getAll, actions)(PosterCanvas);

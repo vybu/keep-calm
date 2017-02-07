@@ -8,18 +8,18 @@ import { Router, browserHistory } from 'react-router';
 import transportAgent from './common/transport';
 import routes from './main/routes';
 import configureStore from './main/store/configureStore';
-import posterCreator from './modules/posterCreator';
+import posterCanvas from './modules/posterCanvas';
 
 transportAgent.setBase(process.env.NODE_ENV === 'production' ? 'api/jsonserver' : 'http://localhost:3005');
 
 const store = configureStore();
 
-posterCreator.services.fontLoader.loadFont(null, 'Keep Calm', () => {
-    store.dispatch(posterCreator.actions.addLoadedFont('Keep Calm'));
+posterCanvas.services.fontLoader.loadFont(null, 'Keep Calm', () => {
+    store.dispatch(posterCanvas.actions.addLoadedFont('Keep Calm'));
 });
 
-posterCreator.services.fontLoader.loadFont(null, 'fontello', () => {
-    store.dispatch(posterCreator.actions.addLoadedFont('fontello'));
+posterCanvas.services.fontLoader.loadFont(null, 'fontello', () => {
+    store.dispatch(posterCanvas.actions.addLoadedFont('fontello'));
 });
 
 
