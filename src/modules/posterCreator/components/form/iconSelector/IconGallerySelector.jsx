@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Section, SectionItem } from '../../../../../common/components/galleryPicker';
-import { fontello, originalCrown } from './icons';
+import data from '../../../../../common/data';
+
+const { fontello, originalCrown } = data.icons;
 
 const IconGallerySelector = ({ onSelect, onClose }) => {
 

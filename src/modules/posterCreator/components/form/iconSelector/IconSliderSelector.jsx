@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Item } from '../../../../../common/components/simpleSlider';
-import { fontello, originalCrown } from './icons';
+import { fontello, originalCrown } from '../../../../../common/data/icons';
 
 const IconSliderSelector = ({ onSelect, onMoreButtonClick }) => (
     <Container onMoreButtonClick={onMoreButtonClick}>

@@ -1,9 +1,9 @@
 import React from 'react';
-import { availableFonts } from '../../../posterCanvas/services/fontLoader';
+import data from '../../../../common/data';
 
 const FontSelector = ({ value, onSelect }) => (
     <select value={value} onChange={onSelect} style={{ fontFamily: value }} className="FontSelector">
-        {availableFonts.map((f, i) => <option style={{ fontFamily: 'Muli, Helvetica' }} key={i}
+        {data.fonts.availableFonts.map((f, i) => <option style={{ fontFamily: 'Muli, Helvetica' }} key={i}
                                                                   value={f}>{f}</option>)}
     </select>
 );

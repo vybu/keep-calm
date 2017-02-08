@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Item } from '../../../../../common/components/simpleSlider';
-import { defaultColors } from './colors';
+import { defaultColors } from '../../../../../common/data/colors';
 
 const StyleSliderPicker = ({ onSelect, onMoreButtonClick }) => (
     <div className="CreatorForm-stylingSlidingSelector">

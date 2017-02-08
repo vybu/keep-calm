@@ -55,14 +55,14 @@
 
 .SizeSelection {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  height: 420px;
+  height: 370px;
   width: 68vw;
 
   @include for-phone-only {
-    height: 300px;
+    height: 250px;
     width: 82vw;
   }
 
@@ -73,9 +73,11 @@
   h3 {
     color: rgba(0, 0, 0, 0.8);
     text-align: center;
+    margin-top: 0;
   }
 
   &-sizes {
+    height: 100%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;

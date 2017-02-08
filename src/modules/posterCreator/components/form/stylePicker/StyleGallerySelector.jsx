@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Section, SectionItem, BottomSpace } from '../../../../../common/components/galleryPicker';
-import { defaultColors, crayolaColors } from './colors';
+import data from '../../../../../common/data';
+
+const { defaultColors, crayolaColors } = data.colors;
 
 const sensitizeInput = (value) => value.length < 1 ? '#' : value;
 
