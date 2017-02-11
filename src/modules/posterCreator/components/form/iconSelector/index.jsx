@@ -3,7 +3,7 @@ import GallerySelector from './IconGallerySelector.jsx';
 import SliderSelector from './IconSliderSelector.jsx';
 
 
-class IconSelector extends React.Component {
+class IconSelector extends React.Component {        
     constructor(props) {
         super(props);
         this.state = {

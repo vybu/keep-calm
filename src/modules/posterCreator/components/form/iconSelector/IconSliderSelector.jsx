@@ -6,7 +6,7 @@ const IconSliderSelector = ({ onSelect, onMoreButtonClick }) => (
     <Container onMoreButtonClick={onMoreButtonClick}>
         <Item onClick={() => onSelect(originalCrown.symbol, originalCrown.fontFamily)}
               style={{ cursor: 'pointer', fontFamily: originalCrown.fontFamily }}>{originalCrown.symbol}</Item>
-        {fontello.symbols.slice(0, 8).map((text, i) => (
+        {fontello.symbols.slice(0, 11).map((text, i) => (
             <Item onClick={() => onSelect(text, fontello.fontFamily)} key={i}
                   style={{ cursor: 'pointer', fontFamily: fontello.fontFamily }}>{text}</Item>))}
     </Container>

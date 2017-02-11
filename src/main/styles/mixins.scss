@@ -25,15 +25,19 @@
 
 @mixin button {
   font-family: 'Muli', sans-serif;
-  font-size: 1.5rem;
-  color: lighten(black, 5%);
-  border: none;
-
-  //border-radius: 0.28rem;
-  padding: 0.7rem;
-  background-color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  color:rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+  border-radius: $br-medium;
 
   &:hover {
-    box-shadow: $bs-medium;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+    color:rgba(0, 0, 0, 0.9);
   }
 }

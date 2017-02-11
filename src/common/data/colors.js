@@ -34,7 +34,23 @@ export const defaultColors = [{
     hex: '#fa28ff',
     name: 'Heliotrope',
     rgb: '(250, 40, 255)'
-}];
+},
+{
+    "hex": "#EFDECD",
+    "name": "Almond",
+    "rgb": "(239, 222, 205)"
+},
+{
+    "hex": "#CD9575",
+    "name": "Antique Brass",
+    "rgb": "(205, 149, 117)"
+},
+{
+    "hex": "#FDD9B5",
+    "name": "Apricot",
+    "rgb": "(253, 217, 181)"
+},
+];
 
 export const crayolaColors = [
     {

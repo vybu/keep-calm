@@ -13,7 +13,7 @@ class ColorPicker extends React.Component {
 
     render() {
         return (
-            <div className="IconPicker">
+            <div className="StylePicker">
                 { this.state.isGalleryOn ?
                     <GallerySelector value={this.props.value} onClose={() => this.setState({ isGalleryOn: false })} onSelect={this.props.onSelect}/> : null}
                 <SliderSelector onMoreButtonClick={() => this.setState({ isGalleryOn: true })} onSelect={this.props.onSelect}/>

@@ -17,4 +17,4 @@ StyleSliderPicker.propTypes = {
 };
 
 
-export default StyleSliderPicker;
+export default StyleSliderPicker;   

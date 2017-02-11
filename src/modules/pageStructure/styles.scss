@@ -3,7 +3,7 @@
   padding: 0 10vw;
 
   @include for-desktop-up {
-    padding: 0 calc((100vw - 1200px) / 2);
+    padding: 0 calc((100vw - 1100px) / 2);
   }
 }
 

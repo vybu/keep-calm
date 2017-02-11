@@ -3,13 +3,11 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: $bs-medium;
-  padding: 10px;
-  border-radius: $br-medium;
+  padding: 15px;
 
-  @include for-desktop-up {
-    flex-direction: row;
-  }
+  // @include for-desktop-up {
+  //   flex-direction: row;
+  // }
 }
 
 .PosterCanvas {
@@ -54,31 +52,24 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 15px;
 
 
-  @include for-desktop-up {
-    width: 200px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 15px;
-  }
+  // @include for-desktop-up {
+  //   width: 200px;
+  //   height: 100%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-around;
+  //   padding: 15px;
+  // }
 
   &-optionButton {
-    cursor: pointer;
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    background-color: transparent;
-    border: 1px solid darken(#eaeaea, 10%);
-    color: darken(#eaeaea, 35%);
-    font-weight: 700;
-    border-radius: $br-medium;
+    flex: 1;
+    @include button();
 
-    &:hover {
-      border: 1px solid darken(#eaeaea, 40%);
-      color: darken(#eaeaea, 75%);
+    &:not(:last-child) {
+      margin-right: 0.5rem;
     }
   }
 }
