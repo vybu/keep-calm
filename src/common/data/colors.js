@@ -1,55 +1,56 @@
-export const defaultColors = [{
-    hex: '#c10c06',
-    name: 'Milano Red',
-    rgb: '(193, 12, 6)'
-}, {
-    hex: '#ffffff',
-    name: 'White',
-    rgb: '(255, 255, 255)'
-}, {
-    hex: '#000000',
-    name: 'Black',
-    rgb: '(0, 0, 0)'
-}, {
-    hex: '#795548',
-    name: 'Roman Coffee',
-    rgb: '(121, 85, 72)'
-}, {
-    hex: '#2196f3',
-    name: 'Dodger Blue',
-    rgb: '(33, 150, 243)'
-}, {
-    hex: '#ffeb3b',
-    name: 'Gorse',
-    rgb: '(255, 235, 59)'
-}, {
-    hex: '#00d084',
-    name: 'Caribbean Green',
-    rgb: '(0, 208, 132)'
-}, {
-    hex: '#ff6f00',
-    name: 'Blaze Orange',
-    rgb: '(255, 111, 0)'
-}, {
-    hex: '#fa28ff',
-    name: 'Heliotrope',
-    rgb: '(250, 40, 255)'
-},
-{
-    "hex": "#EFDECD",
-    "name": "Almond",
-    "rgb": "(239, 222, 205)"
-},
-{
-    "hex": "#CD9575",
-    "name": "Antique Brass",
-    "rgb": "(205, 149, 117)"
-},
-{
-    "hex": "#FDD9B5",
-    "name": "Apricot",
-    "rgb": "(253, 217, 181)"
-},
+export const defaultColors = [
+    {
+        hex: '#c10c06',
+        name: 'Milano Red',
+        rgb: '(193, 12, 6)'
+    }, {
+        hex: '#ffffff',
+        name: 'White',
+        rgb: '(255, 255, 255)'
+    }, {
+        hex: '#000000',
+        name: 'Black',
+        rgb: '(0, 0, 0)'
+    }, {
+        hex: '#795548',
+        name: 'Roman Coffee',
+        rgb: '(121, 85, 72)'
+    }, {
+        hex: '#2196f3',
+        name: 'Dodger Blue',
+        rgb: '(33, 150, 243)'
+    }, {
+        hex: '#ffeb3b',
+        name: 'Gorse',
+        rgb: '(255, 235, 59)'
+    }, {
+        hex: '#00d084',
+        name: 'Caribbean Green',
+        rgb: '(0, 208, 132)'
+    }, {
+        hex: '#ff6f00',
+        name: 'Blaze Orange',
+        rgb: '(255, 111, 0)'
+    }, {
+        hex: '#fa28ff',
+        name: 'Heliotrope',
+        rgb: '(250, 40, 255)'
+    },
+    {
+        "hex": "#EFDECD",
+        "name": "Almond",
+        "rgb": "(239, 222, 205)"
+    },
+    {
+        "hex": "#CD9575",
+        "name": "Antique Brass",
+        "rgb": "(205, 149, 117)"
+    },
+    {   
+        "hex": "#FDD9B5",
+        "name": "Apricot",
+        "rgb": "(253, 217, 181)"
+    },
 ];
 
 export const crayolaColors = [

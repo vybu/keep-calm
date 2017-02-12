@@ -1,6 +1,7 @@
 
 .CreatorContainer {
-  //border: 1px solid $light-border-color;
+  // border: 1px solid $light-border-color;
+  box-shadow: $bs-small;   
   background-color: white;
   border-radius: $br-medium;
   display: flex;
@@ -8,7 +9,8 @@
   margin: 0 -25px;
   padding: 3vw;
   @include for-tablet-landscape-up {
-    padding: 20px;
+    margin: 0 -65px;    
+    padding: 55px 20px;
   }
 
   justify-content: center;
@@ -18,8 +20,6 @@
 
   .PosterCanvasContainer {
     box-shadow: $bs-small; 
-      // border: 1px solid $light-border-color;
-      // border-bottom: 3px solid $light-border-color;
     border-radius: $br-medium;
     order: -1;
     margin-bottom: 25px;
@@ -34,8 +34,6 @@
 
 .CreatorForm {
   position: relative;
-  // box-shadow: $bs-small;
-  // border: 1px solid $light-border-color;
   border-radius: $br-medium;
   padding: 15px 15px 0;
 
@@ -104,7 +102,7 @@
 
 .GeneratorForm {
   &-divider {
-    padding: 1rem;
+    padding: 1rem 0;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -125,6 +123,13 @@
 
   &-option {
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+
+    label {
+      cursor: pointer;
+    }
+
     input {
       width: 0.9rem;
       height: 0.9rem;
@@ -137,17 +142,8 @@
     flex-direction: column;
 
     button {
-  font-family: 'Muli', sans-serif;
-  cursor: pointer;
-  padding: 0.5rem;
-  font-size: 1rem;
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 700;
-  border-radius: $br-medium;
-  margin: 0.7rem 0.3rem 0.3rem;
+      @include button-action();
+      margin: 0.7rem 0.3rem 0.3rem;
     }
   }
 }

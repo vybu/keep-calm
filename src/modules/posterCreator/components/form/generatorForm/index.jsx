@@ -2,6 +2,21 @@ import React from 'react';
 import { GENERATION_FUNNY } from '../../../constants';
 
 class GeneratorForm extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            type: null
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+
+    handleChange(ev) {
+        this.setState({ type: ev.target.value });
+    }
+
     render() {
         return (
             <div className="GeneratorForm">
@@ -13,18 +28,18 @@ class GeneratorForm extends React.Component {
 
                 <div className="GeneratorForm-controls">
                     <div className="GeneratorForm-option">
-                        <input name="type" type="radio" />
-                        <label htmlFor="">Random</label>
-                    </div>
-                    <div className="GeneratorForm-option">   
-                        <input name="type" type="radio" />
-                        <label htmlFor="">Funny / Cute</label>
+                        <input value="random" checked={this.state.type === 'random'} onChange={this.handleChange} name="type" type="radio" />
+                        <label onClick={() => this.setState({ type: 'random' })} htmlFor="">Random</label>
                     </div>
                     <div className="GeneratorForm-option">
-                        <input name="type" type="radio" />
-                        <label htmlFor="">Sophisticated / Corporate</label>
+                        <input value="funny" checked={this.state.type === 'funny'} onChange={this.handleChange} name="type" type="radio" />
+                        <label onClick={() => this.setState({ type: 'funny' })} htmlFor="">Funny / Cute</label>
                     </div>
-                    <button onClick={() => this.props.generateStyling(GENERATION_FUNNY)}>Surprise me!</button>
+                    <div className="GeneratorForm-option">
+                        <input value="serious" checked={this.state.type === 'serious'} onChange={this.handleChange} name="type" type="radio" />
+                        <label onClick={() => this.setState({ type: 'serious' })} htmlFor="">Serious / Sophisticated</label>
+                    </div>
+                    <button onClick={() => this.props.generateStyling(GENERATION_FUNNY)}>Generate</button>
                 </div>
             </div>
         );

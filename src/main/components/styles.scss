@@ -11,10 +11,15 @@
   } // TODO move to snippet
 
   &-wrap {
+    // border: 1px solid $light-border-color;
+    box-shadow: $bs-small;  
     background-color: $nav-footer-bg;
-    padding: 3vh 5vw;
+    padding: 5vh 5vw;
     border-radius: $br-medium;
-    margin: 0 -20px;
+    margin: 0 -25px;
+    @include for-tablet-landscape-up {
+      margin: 0 -65px;    
+    }
   }
 
   &-imageWrap {
