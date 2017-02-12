@@ -6,7 +6,7 @@ class GeneratorForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            type: null
+            type: 'random'
         };
 
         this.handleChange = this.handleChange.bind(this);

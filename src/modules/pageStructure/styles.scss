@@ -20,6 +20,14 @@
     font-size: 26px;
     display: flex;
     align-items: center;
+
+    img {
+      width: 200px;
+
+      @include for-phone-only {
+        width: 120px;        
+      }
+    }
   }
 
   &-logoIcon {

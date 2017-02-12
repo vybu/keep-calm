@@ -1,10 +1,11 @@
 import data from '../../../common/data';
 import random from 'lodash/random';
+import * as C from '../constants';
 
-const colors = [ ...data.colors.defaultColors, ...data.colors.crayolaColors ];
+const colors = [...data.colors.defaultColors, ...data.colors.crayolaColors];
 const fonts = data.fonts.availableFonts;
 const fontelloIcons = data.icons.fontello;
-const original = data.icons.originalCrown;
+// const original = data.icons.originalCrown;
 
 
 function pickRandom(arr) {
@@ -23,5 +24,7 @@ function constructRandomConfig() {
 
 
 export default function generator(currentPosterConfig, generationType) {
-    return { currentPosterConfig, ...constructRandomConfig() };
+    if (generationType === C.GENERATION_FUNNY) {
+        return { currentPosterConfig, ...constructRandomConfig() };
+    }
 }
