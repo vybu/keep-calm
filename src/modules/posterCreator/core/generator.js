@@ -3,7 +3,6 @@ import { pickRandom } from './utils';
 import { getRandomPair } from './colorMixer';
 import * as C from '../constants';
 
-const colors = [...data.colors.defaultColors, ...data.colors.crayolaColors];
 const fonts = data.fonts.availableFonts;
 const fontelloIcons = data.icons.fontello;
 // const original = data.icons.originalCrown;
