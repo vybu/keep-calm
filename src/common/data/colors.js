@@ -711,6 +711,12 @@ export const crayolaColors = [
     }
 ];
 
+
+export function getHex(colors) {
+    return colors.map(c => c.hex);
+}
+
+
 function getArrayOfLength(l = 100) {
     const a = [];
     while (l--) {
