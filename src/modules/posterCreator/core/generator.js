@@ -25,8 +25,6 @@ export default function generator(currentPosterConfig, generationType) {
     }
 }
 
-
-
 /*
     Possible implamentation:
 

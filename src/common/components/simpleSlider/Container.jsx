@@ -32,7 +32,7 @@ Container.propTypes = {
 };
 
 Container.defaultProps = {
-    size: 26,
+    size: 28,
     moreButton: false,
     onMoreButtonClick: null
 };

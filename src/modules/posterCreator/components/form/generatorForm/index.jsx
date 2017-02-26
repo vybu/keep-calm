@@ -27,7 +27,7 @@ class GeneratorForm extends React.Component {
                 </div>
 
                 <div className="GeneratorForm-controls">
-                    <div className="GeneratorForm-option">
+                    {/*<div className="GeneratorForm-option">
                         <input value="random" checked={this.state.type === 'random'} onChange={this.handleChange} name="type" type="radio" />
                         <label onClick={() => this.setState({ type: 'random' })} htmlFor="">Random</label>
                     </div>
@@ -38,7 +38,8 @@ class GeneratorForm extends React.Component {
                     <div className="GeneratorForm-option">
                         <input value="serious" checked={this.state.type === 'serious'} onChange={this.handleChange} name="type" type="radio" />
                         <label onClick={() => this.setState({ type: 'serious' })} htmlFor="">Serious / Sophisticated</label>
-                    </div>
+                    </div>*/}
+                    <p>Struggling with creativity? Click until you get design you like.</p>
                     <button onClick={() => this.props.generateStyling(GENERATION_FUNNY)}>Generate</button>
                 </div>
             </div>
