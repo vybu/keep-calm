@@ -6,11 +6,7 @@ const logo = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyIAAACUCAMAAABY6G2Z
 const PageNav = () => (
     <nav className="PageNav">
         <div className="PageNav-logo">
-            <img src={logo} alt=""/>
-        </div>
-        <div className="PageNav-controls">
-            <Link activeClassName="is-active" className="PageNav-controlsItem" to={'/generator'}>Generator</Link>
-            <Link activeClassName="is-active" className="PageNav-controlsItem" to={'/history'}>History</Link>
+            <img src={logo} alt="" />
         </div>
     </nav>
 );

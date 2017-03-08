@@ -9,6 +9,7 @@
 .PageNav {
   height: 80px;
   display: flex;
+  justify-content: center;
   background-color: $nav-footer-bg;
   border-bottom: $nav-footer-border;
 
@@ -17,6 +18,7 @@
   }
 
   &-logo {
+    cursor: pointer;
     font-size: 26px;
     display: flex;
     align-items: center;
@@ -27,45 +29,6 @@
       @include for-phone-only {
         width: 120px;        
       }
-    }
-  }
-
-  &-logoIcon {
-    font-family: 'Keep Calm'; // TODO What happens when font dont load ? use img?
-    padding-right: 20px;
-    font-size: 40px;
-  }
-
-  &-logoText {
-    display: none;
-    @include for-tablet-portrait-up {
-      display: block;
-      font-size: 30px;
-    }
-  }
-
-  &-controls {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  &-controlsItem {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin-left: 50px;
-    color: rgb(63, 56, 68);
-    @include link();
-
-    @include for-phone-only {
-      margin-left: 5vw;
-    }
-
-    &.is-active {
-      font-weight: 600;      
-      color: rgb(63, 56, 68);      
     }
   }
 }
