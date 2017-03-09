@@ -14,9 +14,10 @@ class Generator extends React.Component {
             <PageBody>
                 <MainTextSection title={"Create Keep Calm Posters With Ease"}>
                     <div onClick={() => window.open('/generator', '_self')} className="Logo">
-                        <img src={logo} alt="" />
+                        <h1>KEEP CALM</h1>
+                        {/*<img src={logo} alt="" />*/}
                     </div>
-                    <p style={{ textAlign: 'center', fontSize: '1.5rem', maxWidth: '700px', padding: '0', margin: '0' }}>Creating a Keep Calm And Carry On poster has never been this easy. Use our creator to create and print, export or share "Keep Calm And Carry on" posters.</p>
+                    <p>Creating a Keep Calm And Carry On poster has never been this easy. Use our creator to create and print, export or share "Keep Calm And Carry on" posters.</p>
                 </MainTextSection>
                 <CreatorContainer id={this.props.location.query.id} />
             </PageBody>
