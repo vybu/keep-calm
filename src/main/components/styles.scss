@@ -1,49 +1,12 @@
+  .Logo {
+    cursor: pointer;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5vh;
 
-
-
-.History {
-  color: rgba(0,0,0,.8);
-
-  p {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-
-  } // TODO move to snippet
-
-  &-wrap {
-    // border: 1px solid $light-border-color;
-    box-shadow: $bs-small;  
-    background-color: $nav-footer-bg;
-    padding: 5vh 5vw;
-    border-radius: $br-medium;
-    margin: 0 -25px;
-    @include for-tablet-landscape-up {
-      margin: 0 -65px;    
+    img {
+      max-width: 800px;
+      width: 50vw;
     }
   }
-
-  &-imageWrap {
-    margin-top: 2rem;
-    width: 100%;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 320px;
-    margin-bottom: 2rem;
-  }
-
-  img {
-    width: 100%;
-  }
-
-  &-imageTitle {
-    font-style: italic;
-    margin-top: 0.3rem;
-    font-size: 0.9rem;
-    color: lighten(black, 25%)
-  }
-
-  &-imageTitleSymbol {
-    padding: 0 5px;
-  }
-}

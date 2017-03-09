@@ -3,7 +3,7 @@ import pageStructure from '../../modules/pageStructure';
 import overlayModal from '../../modules/overlayModal';
 
 const { OverlayModal } = overlayModal.containers;
-const { PageNav, PageFooter } = pageStructure.components;
+const { PageFooter } = pageStructure.components;
 
 class App extends React.Component {
     constructor(props) {
@@ -14,7 +14,6 @@ class App extends React.Component {
         return (
             <div className="App">
                 <OverlayModal/>
-                <PageNav />
                     {this.props.children}
                 <PageFooter/>
             </div>

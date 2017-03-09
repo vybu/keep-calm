@@ -5,7 +5,7 @@ const logo = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyIAAACUCAMAAABY6G2Z
 
 const PageNav = () => (
     <nav className="PageNav">
-        <div className="PageNav-logo">
+        <div onClick={() => window.open('/generator', '_self')} className="PageNav-logo">
             <img src={logo} alt="" />
         </div>
     </nav>
