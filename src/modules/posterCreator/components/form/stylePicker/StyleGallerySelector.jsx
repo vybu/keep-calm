@@ -17,14 +17,7 @@ const IconGallerySelector = ({ onSelect, onClose, value }) => {
             </Section>
             <BottomSpace>
                 <span>
-                    <input style={{
-                        width: '100%',
-                        height: '100%',
-                        border: 'none',
-                        textAlign: 'center',
-                        fontSize: '22px',
-                        color: 'rgba(0, 0, 0, 0.9)'
-                    }} value={value.toUpperCase()} onChange={(ev) => onSelect(sensitizeInput(ev.target.value))}
+                    <input value={value.toUpperCase()} onChange={(ev) => onSelect(sensitizeInput(ev.target.value))}
                            type="text"/>
                 </span>
             </BottomSpace>

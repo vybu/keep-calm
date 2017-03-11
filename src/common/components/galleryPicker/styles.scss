@@ -1,110 +1,111 @@
 $border-color: rgba(0, 0, 0, 0.2);
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .GalleryPicker {
-  border: 1px solid $border-color;
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-  background-color: #ffffff;
-  z-index: 200;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height:auto;
-  position: absolute;
-
-  &-header {
-    h3 {
-      color: rgba(0, 0, 0, 0.8);
-    }
+    border: 1px solid $border-color;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 10%;
-    width: 100%;
-    border-bottom: 1px solid $border-color;
-  }
-
-  &-close {
-    cursor: pointer;
-    padding: 5px;
+    flex-direction: column;
+    margin: 5px;
+    background-color: #ffffff;
+    z-index: 200;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: auto;
     position: absolute;
-    top: 3px;
-    right: 3px;
-    font-size: 1.2rem;
-    color: rgba(0, 0, 0, 0.7);
-
-    &:hover {
-      color: rgba(0, 0, 0, 1);
+    &-header {
+        h3 {
+            color: rgba(0, 0, 0, 0.8);
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 10%;
+        width: 100%;
+        border-bottom: 1px solid $border-color;
     }
-  }
-
-  &-body {
-    flex: 1;
-    display: flex;
-  }
-
-  &-bottomSpace {
-    color: rgba(0, 0, 0, 0.8);
-    height: 7%;
-    border-top: 1px solid $border-color;
-  }
-
-  &-sectionsNavigation {
-    padding: 0.7rem 1rem;
-    border-right: 1px solid $border-color;
-  }
-
-  &-navigationItem {
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.8);
-
-    &:not(:first-child) {
-      margin-top: 0.7rem;
-      display: flex;
-      align-items: center;
+    &-close {
+        cursor: pointer;
+        padding: 5px;
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        font-size: 1.2rem;
+        color: rgba(0, 0, 0, 0.7);
+        &:hover {
+            color: rgba(0, 0, 0, 1);
+        }
     }
-
-    &.is-active {
-      text-shadow: 0 0 0.1px black;
+    &-body {
+        flex: 1;
+        display: flex;
     }
-  }
-
-  &-sections {
-    flex: 1;
-  }
+    &-bottomSpace,
+    &-topSpace {
+        color: rgba(0, 0, 0, 0.8);
+        height: 7%;
+        input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            text-align: center;
+            font-size: 22px;
+            color: rgba(0, 0, 0, 0.9);
+        }
+    }
+    &-bottomSpace {
+        border-top: 1px solid $border-color;
+    }
+    &-topSpace {
+        border-bottom: 1px solid $border-color;
+    }
+    &-sectionsNavigation {
+        padding: 0.7rem 1rem;
+        border-right: 1px solid $border-color;
+    }
+    &-navigationItem {
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.8);
+        &:not(:first-child) {
+            margin-top: 0.7rem;
+            display: flex;
+            align-items: center;
+        }
+        &.is-active {
+            text-shadow: 0 0 0.1px black;
+        }
+    }
+    &-sections {
+        flex: 1;
+    }
 }
 
 .GalleryPickerSection {
-  padding: 0.5rem;
-
-  height: 100%;
-  overflow: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  &-item {
+    padding: 0.5rem;
+    max-height: 100%;
+    overflow: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    min-width: 60px;
-    max-width: 60px;
-    height: 60px;
-    margin: 0.45rem;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: $br-medium;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        min-width: 60px;
+        max-width: 60px;
+        height: 60px;
+        margin: 0.45rem;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: $br-medium;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
     }
-  }
 }

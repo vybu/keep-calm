@@ -8,32 +8,34 @@
 @import "../../modules/pageStructure/styles";
 @import "../../modules/posterCreator/styles";
 @import "../../modules/overlayModal/styles";
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-#app, .App, body, html {
-  width: 100%;
-  height: 100%;
-  font-family: 'Muli', sans-serif;
+#app,
+.App,
+body,
+html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Muli', sans-serif;
 }
 
 .App {
-  overflow: auto;
-  background-color: $background-color;
+    overflow: auto;
+    background-color: $background-color;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 h1 {
-  color: rgba(0,0,0,0.8);
-  margin-bottom: 2rem;
-}
-p {
-  color: rgba(0,0,0,0.8);
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 2rem;
 }
 
+p {
+    color: rgba(0, 0, 0, 0.8);
+}

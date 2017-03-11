@@ -1,14 +1,12 @@
 import React from 'react';
 import { Container, Item } from '../../../../../common/components/simpleSlider';
-import { fontello, originalCrown } from '../../../../../common/data/icons';
+import icons from '../../../../../common/data/icons';
 
 const IconSliderSelector = ({ onSelect, onMoreButtonClick }) => (
     <Container onMoreButtonClick={onMoreButtonClick}>
-        <Item onClick={() => onSelect(originalCrown.symbol, originalCrown.fontFamily)}
-              style={{ cursor: 'pointer', fontFamily: originalCrown.fontFamily }}>{originalCrown.symbol}</Item>
-        {fontello.symbols.slice(0, 11).map((text, i) => (
-            <Item onClick={() => onSelect(text, fontello.fontFamily)} key={i}
-                  style={{ cursor: 'pointer', fontFamily: fontello.fontFamily }}>{text}</Item>))}
+        {icons.slice(0, 12).map(({ symbol, fontFamily }, i) => (
+            <Item onClick={() => onSelect(symbol, fontFamily)} key={i}
+                  style={{ cursor: 'pointer', fontFamily }}>{symbol}</Item>))}
     </Container>
 );
 

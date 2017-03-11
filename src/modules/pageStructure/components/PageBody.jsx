@@ -6,7 +6,6 @@ const PageBody = props => (
             {props.children}
         </div>
         <div className="PageBody-bottomSpace" />
-        <div className="PageBody-bgContrast" />
     </main>
 );
 

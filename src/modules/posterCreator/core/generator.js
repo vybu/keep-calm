@@ -4,17 +4,18 @@ import { getRandomPair } from './colorMixer';
 import * as C from '../constants';
 
 const fonts = data.fonts.availableFonts;
-const fontelloIcons = data.icons.fontello;
-// const original = data.icons.originalCrown;
+const icons = data.icons.default;
 
 function constructRandomConfig() {
     const [bgColor, txtColor] = getRandomPair();
+    const icon = pickRandom(icons);
+
     return {
         fontFamily: pickRandom(fonts),
         backgroundColor: bgColor,
         textColor: txtColor,
-        iconText: pickRandom(fontelloIcons.symbols),
-        iconFont: fontelloIcons.fontFamily
+        iconText: icon.symbol,
+        iconFont: icon.fontFamily
     };
 }
 

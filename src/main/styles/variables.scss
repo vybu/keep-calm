@@ -1,19 +1,15 @@
-
 $br-small: 1px;
 $br-medium: 3px;
-
-$bs-small: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-$bs-medium: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-
+$bs-small: 0 1px 3px rgba(0, 0, 0, 0.12),
+0 1px 2px rgba(0, 0, 0, 0.24);
+$bs-medium: 0 3px 6px rgba(0, 0, 0, 0.16),
+0 3px 6px rgba(0, 0, 0, 0.23);
 $text-color: #333030;
-$background-color: darken(whitesmoke, 1.5%);
+$background-color: #fdfdfd;
 $main-color: #3E83F9;
 $dark-main-color: #063990;
 $accent-color: #FFA400;
 $accent-color-red: #FE2B48;
-$light-border-color: rgba(0, 0, 0, 0.2);    
-
-    
-
-$nav-footer-bg: white;//lighten(whitesmoke, 3%);
+$light-border-color: rgba(0, 0, 0, 0.2);
+$nav-footer-bg: white; //lighten(whitesmoke, 3%);
 $nav-footer-border: 1px solid rgba(0, 0, 0, 0.1);

@@ -1,7 +1,9 @@
 import React from 'react';
 import SectionsNav from './SectionsNav.jsx';
+import Section from './Section.jsx';
 import Header from './Header.jsx';
 import BottomSpace from './BottomSpace.jsx';
+import TopSpace from './TopSpace.jsx';
 
 
 class Container extends React.Component {
@@ -12,6 +14,10 @@ class Container extends React.Component {
         };
         this.selectSection = this.selectSection.bind(this);
     }
+    
+    getChildByType(type) {
+        return React.Children.toArray(this.props.children).filter(c => c.type === type);
+    }
 
     selectSection(activeSection) {
         this.setState({ activeSection });
@@ -21,35 +27,26 @@ class Container extends React.Component {
         const activeCompName = this.state.activeSection;
         let activeChild;
 
-        React.Children.forEach(this.props.children, (child, i) => {
+        this.getChildByType(Section).forEach((child, i) => {
             if (activeCompName === child.props.title) {
                 activeChild = child;
             } else if (activeCompName === null && i === 0) {
                 activeChild = child;
             }
-        });
+        })
 
         return activeChild;
     }
 
-    getBottomSpace() {
-        let bottomSpace = null;
-        React.Children.forEach(this.props.children, child => {
-            if (child.type === BottomSpace) {
-                bottomSpace = child;
-            }
-        });
-
-        return bottomSpace;
-    }
-
     render() {
-        const bottomSpace = this.getBottomSpace();
+        const bottomSpace = this.getChildByType(BottomSpace);
+        const topSpace = this.getChildByType(TopSpace);
         const activeChild = this.getActiveChild();
 
         return (
             <div className="GalleryPicker">
                 <Header value={this.props.title} onClose={this.props.onClose}/>
+                {topSpace}
                 <div className="GalleryPicker-body">
                     {this.props.showNav ? <SectionsNav children={this.props.children} selectSection={this.selectSection}
                                                        activeChild={activeChild}/> : null}

@@ -1,23 +1,50 @@
 import React from 'react';
-import { Container, Section, SectionItem } from '../../../../../common/components/galleryPicker';
-import data from '../../../../../common/data';
+import { Container, Section, SectionItem, TopSpace } from '../../../../../common/components/galleryPicker';
+import icons from '../../../../../common/data/icons.js';
 
-const { fontello, originalCrown } = data.icons;
+class IconGallerySelector extends React.Component {
+    constructor(props) {
+        super(props);
 
-const IconGallerySelector = ({ onSelect, onClose }) => {
+        this.state = {
+            search: ''
+        };
 
-    return (
-        <Container title="Icon Gallery" onClose={onClose}>
-            <Section title={'Icons'}>
-                <SectionItem size={39} onClick={() => onSelect(originalCrown.symbol, originalCrown.fontFamily)}
-                             style={{ cursor: 'pointer', fontFamily: originalCrown.fontFamily }}>{originalCrown.symbol}</SectionItem>
-                {fontello.symbols.slice(9).map((text, i) => (
-                    <SectionItem size={39} onClick={() => onSelect(text, fontello.fontFamily)} key={i}
-                                 style={{ cursor: 'pointer', fontFamily: fontello.fontFamily }}>{text}</SectionItem>))}
-            </Section>
-        </Container>
-    );
-};
+        this.onSearchInput = this.onSearchInput.bind(this);
+        this.getFilteredData = this.getFilteredData.bind(this);
+    }
+
+    onSearchInput(ev) {
+        this.setState({ search: ev.target.value });
+    }
+    
+    getFilteredData() {
+        const search = this.state.search;
+        if (search) {
+            return icons.filter(({name})=> name.includes(search));
+        } else {
+            return icons;
+        }
+    }
+
+    render() {
+        const { onSelect, onClose } = this.props;
+        return (
+            <Container title="Icon Gallery" onClose={onClose}>
+                <TopSpace>
+                    <input onChange={this.onSearchInput} placeholder="Search" type="text" />
+                </TopSpace>
+                <Section title={'Icons'}>
+                    {this.getFilteredData().map(({ name, symbol, fontFamily }, i) => (
+                        <SectionItem size={39} onClick={() => onSelect(symbol, fontFamily)} key={i}
+                            style={{ cursor: 'pointer', fontFamily }}>{symbol}</SectionItem>))}
+                </Section>
+            </Container>
+        );
+    }
+}
+
+
 
 IconGallerySelector.propTypes = {
     onSelect: React.PropTypes.func,

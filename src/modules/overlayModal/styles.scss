@@ -1,172 +1,149 @@
 .OverlayModal {
-  z-index: 9999;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  justify-content: center;
-  align-items: center;
-  display: flex;
-
-  &-main {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border-radius: $br-medium;
-    background-color: white;
-    padding: 3rem;
-    max-width: 94vw;
-
-    @include for-phone-only {
-      padding: 1.5rem;
-    }
-  }
-
-  &-close {
-    cursor: pointer;
-    padding: 5px;
+    z-index: 9999;
     position: absolute;
-    top: 5px;
-    right: 5px;
-    @include for-phone-only {
-      top: 0px;
-      right: 0px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    &-main {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border-radius: $br-medium;
+        background-color: white;
+        padding: 3rem;
+        max-width: 94vw;
+        @include for-phone-only {
+            padding: 1.5rem;
+        }
     }
-  }
+    &-close {
+        cursor: pointer;
+        padding: 5px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        @include for-phone-only {
+            top: 0px;
+            right: 0px;
+        }
+    }
 }
 
 .ShareLink {
-  &-value {
-    display: flex;
-    padding: 1rem;
-    border-radius: $br-medium;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    font-size: 1.8rem;
-    text-align: center;
-    min-width: 500px;
-
-    @include for-phone-only {
-      min-width: 82vw;
-      padding: 0.5rem;
-      font-size: 1.2rem;
+    &-value {
+        display: flex;
+        padding: 1rem;
+        border-radius: $br-medium;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        font-size: 1.8rem;
+        text-align: center;
+        min-width: 500px;
+        @include for-phone-only {
+            min-width: 82vw;
+            padding: 0.5rem;
+            font-size: 1.2rem;
+        }
     }
-  }
 }
 
 .SizeSelection {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 370px;
-  width: 68vw;
-
-  @include for-phone-only {
-    height: 250px;
-    width: 82vw;
-  }
-
-  @include for-tablet-landscape-up {
-    width: 620px;
-  }
-
-  h3 {
-    color: rgba(0, 0, 0, 0.8);
-    text-align: center;
-    margin-top: 0;
-  }
-
-  &-sizes {
-    height: 100%;
-    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-  }
-
-  &-item {
-
-    h4 {
-      text-align: center;
-    }
-
-    color: rgba(0, 0, 0, 0.8);
-    cursor: pointer;
-    margin: 1%;
-    padding: 2%;
-    max-width: 150px;
-    max-height: 150px;
-    min-width: 18vw;
-    min-height: 18vw;
-    flex: 1;
-    border-radius: $br-medium;
-    border: 1px solid $light-border-color;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    &:hover {
-      color: black;
-      border: 1px solid black;
-    }
-
-    @include for-tablet-landscape-up {
-      max-width: 150px;
-      min-width: 150px;
-      max-height: 150px;
-      min-height: 150px;
-    }
-
-    @include for-phone-only {
-      min-width: 24vw;
-      max-width: 24vw;
-      height: 24vw;
-
-    }
-
-  }
-
-  &-itemMeasurements {
-    display: none;
-    @include for-tablet-landscape-up {
-      display: block;
-    }
-  }
-
-  &-form {
-    display: flex;
     flex-direction: column;
-    height: 100%;
-    max-width: 100%;
-    border-radius: $br-medium;
-    border: 1px solid $light-border-color;
-    padding: 4%;
-
-    label {
-      margin-bottom: 0.4rem;
+    height: 370px;
+    width: 68vw;
+    @include for-phone-only {
+        height: 250px;
+        width: 82vw;
     }
-
-    input {
-      border: 1px solid $light-border-color;
-      color: rgba(0, 0, 0, 0.8);
-      text-align: center;
-      padding: 0.2rem;
-      height: 2.5rem;
-      font-size: 1.5rem;
+    @include for-tablet-landscape-up {
+        width: 620px;
     }
-
-    button {
-      @include button-action();
+    h3 {
+        color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        margin-top: 0;
     }
-
-    &Group {
-      flex: 1;
-      margin-bottom: 1.5rem;
-      display: flex;
-      flex-direction: column;
-
+    &-sizes {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-  }
+    &-item {
+        h4 {
+            text-align: center;
+        }
+        color: rgba(0, 0, 0, 0.8);
+        cursor: pointer;
+        margin: 1%;
+        padding: 2%;
+        max-width: 150px;
+        max-height: 150px;
+        min-width: 18vw;
+        min-height: 18vw;
+        flex: 1;
+        border-radius: $br-medium;
+        border: 1px solid $light-border-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            color: black;
+            border: 1px solid black;
+        }
+        @include for-tablet-landscape-up {
+            max-width: 150px;
+            min-width: 150px;
+            max-height: 150px;
+            min-height: 150px;
+        }
+        @include for-phone-only {
+            min-width: 24vw;
+            max-width: 24vw;
+            height: 24vw;
+        }
+    }
+    &-itemMeasurements {
+        display: none;
+        @include for-tablet-landscape-up {
+            display: block;
+        }
+    }
+    &-form {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        max-width: 100%;
+        border-radius: $br-medium;
+        border: 1px solid $light-border-color;
+        padding: 4%;
+        label {
+            margin-bottom: 0.4rem;
+        }
+        input {
+            border: 1px solid $light-border-color;
+            color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 0.2rem;
+            height: 2.5rem;
+            font-size: 1.5rem;
+        }
+        button {
+            @include button-action();
+        }
+        &Group {
+            flex: 1;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }

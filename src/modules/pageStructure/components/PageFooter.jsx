@@ -30,4 +30,12 @@ const PageFooter = () => (
     </footer>
 );
 
-export default PageFooter;
+const PageFooter2 = () => (
+    <footer className="PageFooter2">
+        <div className="PageFooter2-copyright">
+            Made with 💻 by Vytenis Butkevicius. © 2017 {new Date().getFullYear() !== 2017 ? ` - ${new Date().getFullYear()}` : ''}
+        </div>
+    </footer>
+);
+
+export default PageFooter2;
