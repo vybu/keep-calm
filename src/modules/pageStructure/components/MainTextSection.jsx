@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MainTextSection = ({ title, children }) => (
+const MainTextSection = ({ children }) => (
     <section className="MainTextSection">
         <div className="MainTextSection-innerWrap">
             {/*<h1 className="MainTextSection-title">{title}</h1>*/}

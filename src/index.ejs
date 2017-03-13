@@ -4,9 +4,10 @@
   **NOTE:** This is a template for index.html. It uses ejs and htmlWebpackPlugin to generate a different index.html for each environment. htmlWebpackPlugin will dynamically add references to the scripts and styles that it bundles to this file. The generated bundles have hash-based filenames, so it's necessary to add the references dynamically.
   For more info on ejs, see http://www.embeddedjs.com/. For examples of using it with htmlWebpackPlugin, see https://github.com/jaketrent/html-webpack-template/blob/master/index.ejs
   -->
+
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Keep Calm And Carry On Poster Generator</title>
     <meta name="description" content="Easily build and customize a Keep Calm And Carry On poster with just few clicks.">
@@ -16,14 +17,29 @@
         TODO: twitter one too
     -->
     <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet" async>
-    <link href="https://fonts.googleapis.com/css?family=Aldrich|Amatic+SC|Audiowide|Bungee|Bungee+Shade|Cabin+Sketch|Chonburi|Cinzel+Decorative|Creepster|Faster+One|Fontdiner+Swanky|Fredericka+the+Great|Gloria+Hallelujah|Londrina+Shadow|Marck+Script|Megrim|Monofett|Monoton|Montserrat+Subrayada|Nosifer|Patrick+Hand+SC|Permanent+Marker|Press+Start+2P|Roboto+Mono|Rubik+Mono+One|Syncopate" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich|Amatic+SC|Audiowide|Bungee|Bungee+Shade|Cabin+Sketch|Chonburi|Cinzel+Decorative|Creepster|Faster+One|Fontdiner+Swanky|Fredericka+the+Great|Gloria+Hallelujah|Londrina+Shadow|Marck+Script|Megrim|Monofett|Monoton|Montserrat+Subrayada|Nosifer|Patrick+Hand+SC|Permanent+Marker|Press+Start+2P|Roboto+Mono|Rubik+Mono+One|Syncopate"
+        rel="stylesheet">
     <link href="/KeepCalm.css" rel="stylesheet" async>
     <link href="/Icons.css" rel="stylesheet" async>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8" />
 </head>
+
 <body>
-<div id="app">
-    <%= htmlWebpackPlugin.options.prerenderPath %>
-</div>
-<%= htmlWebpackPlugin.options.ga %>
+    <div id="app">
+        <%= htmlWebpackPlugin.options.prerenderPath %>
+    </div>
+    <%= htmlWebpackPlugin.options.ga %>
 </body>
+
 </html>

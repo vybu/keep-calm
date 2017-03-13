@@ -1,55 +1,69 @@
-
 @mixin for-phone-only {
-  @media (max-width: 425px) { @content; }
+    @media (max-width: 425px) {
+        @content;
+    }
 }
+
 @mixin for-tablet-portrait-up {
-  @media (min-width: 600px) { @content; }
+    @media (min-width: 600px) {
+        @content;
+    }
 }
+
 @mixin for-tablet-landscape-up {
-  @media (min-width: 900px) { @content; }
+    @media (min-width: 900px) {
+        @content;
+    }
 }
+
 @mixin for-desktop-up {
-  @media (min-width: 1200px) { @content; }
+    @media (min-width: 1200px) {
+        @content;
+    }
 }
+
 @mixin for-big-desktop-up {
-  @media (min-width: 1800px) { @content; }
+    @media (min-width: 1800px) {
+        @content;
+    }
 }
 
 @mixin link {
-  text-decoration: none;
-  color: rgb(63, 56, 68);
-  &:hover, &.is-active {
-    color: rgba(63, 56, 68, 0.3);
-  }
+    text-decoration: none;
+    color: rgb(63, 56, 68);
+    &:hover,
+    &.is-active {
+        color: rgba(63, 56, 68, 0.3);
+    }
 }
 
 @mixin button {
-  font-family: 'Muli', sans-serif;
-  cursor: pointer;
-  padding: 0.5rem;
-  font-size: 1rem;
-  background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  color:rgba(0, 0, 0, 0.4);
-  font-weight: 700;
-  border-radius: $br-medium;
-
-  &:hover {
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
-    color:rgba(0, 0, 0, 0.9);
-  }
+    font-family: 'Muli', sans-serif;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 700;
+    border-radius: $br-medium;
+    &:hover {
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+        color: rgba(0, 0, 0, 0.9);
+    }
 }
+
 @mixin button-action {
-  font-family: 'Muli', sans-serif;
-  cursor: pointer;
-  padding: 0.5rem;
-  font-size: 1rem;
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 700;
-  border-radius: $br-medium;
+    font-family: 'Muli', sans-serif;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+    border-radius: $br-medium;
 }

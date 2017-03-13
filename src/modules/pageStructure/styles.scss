@@ -1,3 +1,12 @@
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .PageBody,
 .PageFooter {
     padding: 0 10vw;
@@ -11,57 +20,100 @@
     z-index: 1;
     background-color: #f1f1f1;
     min-height: 65vh;
-    border-bottom: 1px solid rgba(1, 1, 1, 0.15);
-    // background: linear-gradient(-11deg, rgb(249, 249, 249), rgb(175, 209, 242));
-    // background: linear-gradient(to left, #8e9eab, #eef2f3);
-    // background: linear-gradient(to left, #abbaab, #ffffff);
-    background: linear-gradient(to left, #757F9A, #D7DDE8);
-    // background: linear-gradient(to left, #FF512F, #DD2476);
-    // background: linear-gradient(to left, #3494E6, #EC6EAD);
-    // background: linear-gradient(to left, #41295a, #2F0743);
-    // background: linear-gradient(to left, #f85032, #e73827);
-    // background: linear-gradient(to left, #141E30, #243B55);
+    background-image: linear-gradient(to top, #795548 0%, #795548 100%);
     & * {
         color: white;
     }
-    &-innerWrap {
+    &-bg {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
+        &>div {
+            flex: 1;
+            animation: fadein 2s;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-width: 45vw;
+            @include for-tablet-landscape-up {
+                min-width: 24vw;
+                height: 100%;
+            }
+        }
+        &One {
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/1.png");
+            display: block;
+            @include for-phone-only {
+                display: none;
+            }
+        }
+        &Two {
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/2.png");
+            display: none;
+            @include for-tablet-landscape-up {
+                display: block;
+            }
+        }
+        &Three {
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/3.png");
+        }
+        &Four {
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/4.png");
+            display: none;
+            @include for-desktop-up {
+                display: block;
+            }
+        }
     }
     h1 {
         position: relative;
         font-family: 'Keep Calm';
-        font-size: calc(32px + 6.5vw);
         text-align: center;
         margin-bottom: 3rem;
+        font-size: calc(32px + 9.5vw);
         @include for-phone-only {
             margin-top: 10vh;
         }
-        // &::after {
-        //     content: "";
-        //     position: absolute;
-        //     height: 1vh;
-        //     bottom: -2vh;
-        //     width: 20%;
-        //     left: 50%;
-        //     transform: translateX(-50%);
-        //     background-color: rgba(1, 1, 1, 0.8);
-        // }
+        @include for-desktop-up {
+            font-size: calc(32px + 6.5vw);
+        }
     }
-    p {
-        text-align: center;
-        font-size: 1.3rem;
-        max-width: 700px;
-        padding: 20px;
-        border: 2px solid white;
-        // border: 2px solid rgba(1, 1, 1, 0.4);
-        border-radius: $br-medium;
-        margin: 0;
-        @include for-phone-only {
-            max-width: 300px;
-            font-size: 1.1rem;
-            padding: 15px;
+    &-tagline {
+        position: relative;
+        &Blur {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: "";
+            filter: blur(5px);
+        }
+        p {
+            text-align: center;
+            font-size: 1.3rem;
+            margin: 0 15px;
+            max-width: 700px;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: $br-medium;
+            @include for-phone-only {
+                max-width: 300px;
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+            span {
+                font-style: italic;
+                text-decoration: underline;
+            }
         }
     }
     display: flex;
@@ -75,104 +127,48 @@
     top: -10vh;
     min-height: 100%;
     position: relative;
-    // background: linear-gradient(-11deg, rgb(249, 249, 249), rgb(175, 209, 242));
-    // background: linear-gradient(to left, #8e9eab, #eef2f3);
-    // background: linear-gradient(to left, #abbaab, #ffffff);
-    // background: linear-gradient(to left, #757F9A, #D7DDE8);
-    // background: linear-gradient(to left, #FF512F, #DD2476);
-    // background: linear-gradient(to left, #3494E6, #EC6EAD);
-    // background: linear-gradient(to left, #41295a, #2F0743);
-    // background: linear-gradient(to left, #f85032, #e73827);
-    // background: linear-gradient(to left, #141E30, #243B55);
     &-content {
         position: relative;
         z-index: 2;
     }
-    &-topSpace {
-        height: 12vh;
-    }
     &-bottomSpace {
-        height: 20vh;
+        height: 15vh;
     }
 }
 
 .PageFooter {
-    background-color: $nav-footer-bg;
+    position: relative;
     border-top: 1px solid rgba(1, 1, 1, 0.15);
-    min-height: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 10vh;
-    &>div {
-        width: 80%;
-        padding: 25px;
-        margin-top: 100px;
-        border: 2px solid rgba(1, 1, 1, 0.4);
-        border-radius: $br-medium;
-    }
-    h4 {
-        margin-top: 1vh;
-        font-size: calc(20px + 0.4vw);
-        text-align: center;
-    }
-    &-about {
-        p {
-            text-align: center;
-            font-size: calc(16px + 0.2vw);
-        }
-        @include for-phone-only {
-            min-width: 80vW;
-        }
-    }
-    &-contact {
-        flex: 1;
-        @include for-phone-only {
-            min-width: 80vW;
-        }
-    }
-    &-contactList {
-        display: flex;
-        justify-content: center;
-        a {
-            margin: 0 2vw;
-            font-size: calc(16px + 0.2vw);
-            @include link();
-        }
-    }
-    &-socialMediaList {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
-$social-icon-size: 3vw;
-$social-icon-size-min: 26px;
-.SocialIcon {
-    display: block;
-    height: $social-icon-size;
-    width: $social-icon-size;
-    min-width: $social-icon-size-min;
-    min-height: $social-icon-size-min;
-    svg {
-        width: 100%;
-        height: 100%;
-    }
-    &-googlePlus {
-        min-width: $social-icon-size-min;
-        padding-left: 4px;
-    }
-}
-
-.PageFooter2 {
-    border-top: 1px solid rgba(1, 1, 1, 0.15);
-    // background: linear-gradient(to left, #757F9A, #D7DDE8);
     background-color: white;
     min-height: 50px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    a {
+        color: darken(#1da1f2, 5%);
+    }
     @include for-phone-only {
         font-size: 0.9rem;
+    }
+    &-copyright {
+        display: flex;
+        justify-content: center;
+        p {
+            text-align: center;
+        }
+    }
+    &-socialIcons {
+        display: flex;
+        .Twitter {
+            margin-right: 5px;
+        }
+        .Facebook {
+            margin-right: 10px;
+        }
+        @include for-tablet-portrait-up {
+            position: absolute;
+            right: 0;
+        }
     }
 }
