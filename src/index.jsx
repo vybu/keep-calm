@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 
 import transportAgent from './common/transport';
-import routes from './main/routes';
+import routes from './main/routes.jsx';
 import configureStore from './main/store/configureStore';
 import posterCanvas from './modules/posterCanvas';
 
@@ -22,9 +22,7 @@ posterCanvas.services.fontLoader.loadFont(null, 'fontello', () => {
     store.dispatch(posterCanvas.actions.addLoadedFont('fontello'));
 });
 
-
-render(
-    <Provider store={store}>
-        <Router history={browserHistory} routes={routes}/>
-    </Provider>, document.getElementById('app')
+render(<Provider store={store} >
+    <Router history={browserHistory} routes={routes} />
+</Provider>, document.getElementById('app')
 );
