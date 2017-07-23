@@ -72,16 +72,4 @@ good separation of concerns. It's also easier to refactor and remove what's not 
    └── index.js // this is where everything is finally initialized from main and common
 
 ```
-
-
-## Possible improvements
-
- - Add routing.
- - Add `reselect` for data computation and caching.
- - Use `immutable.js` for state management.
- - Consider server side rendering.
- - Consider `Flow` or `TypeScript`.
- - Evaluate if it would be more beneficial to use `redux-observable` (RxJs) for async flow management 
- instead of sagas.
- - Describe in more detail how to manage project structure, also add guidelines for testing and styling.
   
